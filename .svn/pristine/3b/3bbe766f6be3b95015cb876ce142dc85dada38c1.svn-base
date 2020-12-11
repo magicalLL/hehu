@@ -1,0 +1,7 @@
+{
+	"code":500,
+	"data":"",
+	"exceptionClazz":"",
+	"message":"服务器未知运行时异常: Request method 'GET' not supported",
+	"success":false
+}

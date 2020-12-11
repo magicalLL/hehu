@@ -1,0 +1,7 @@
+{
+	"code":400,
+	"data":"",
+	"exceptionClazz":"",
+	"message":"HttpMessageNotReadableException:JSON parse error: not close json text, token : ;; nested exception is com.alibaba.fastjson.JSONException: not close json text, token : ;",
+	"success":false
+}

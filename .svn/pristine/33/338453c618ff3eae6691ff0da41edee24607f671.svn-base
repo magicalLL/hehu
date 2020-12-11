@@ -1,0 +1,17 @@
+package cn.stylefeng.guns.modular.hhsys.proxy;
+
+/**
+ * .
+ *
+ * @author <a href="mailto:lanxy88@gmail.com">NelsonXu</a>
+ * @version V1.0, 2014/8/29 10:14
+ */
+public enum ServiceType {
+
+    rest, tile, feature, wms, wfs, wcs, wmts, wps, data_service, report_form, beidou, video, phone;
+
+    public static ServiceType value(String value) {
+        return ServiceType.valueOf(value.toLowerCase());
+    }
+
+}

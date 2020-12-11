@@ -1,0 +1,411 @@
+2020-09-15 10:04:06.874  INFO 6556 --- [main] cn.stylefeng.guns.GunsApplication        : Starting GunsApplication on JXH39NCR0DHFMJG with PID 6556 (started by Administrator in E:\xgx\水利\sever\hehu-master)
+2020-09-15 10:04:06.884  INFO 6556 --- [main] cn.stylefeng.guns.GunsApplication        : The following profiles are active: dev
+2020-09-15 10:04:09.509  INFO 6556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'webConfig' of type [cn.stylefeng.guns.config.web.WebConfig$$EnhancerBySpringCGLIB$$ef48fccb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:04:09.601  INFO 6556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:04:09.619  INFO 6556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:04:09.619  INFO 6556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:04:09.681  INFO 6556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$84ab5a23] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:04:09.839  INFO 6556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$1d59225d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:04:09.852  INFO 6556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:04:09.855  INFO 6556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2b170932' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:04:09.859  INFO 6556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$422dc50f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:04:09.872  INFO 6556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:04:10.606  INFO 6556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9666 (http)
+2020-09-15 10:04:10.632  INFO 6556 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 10:04:10.632  INFO 6556 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-09-15 10:04:10.648  INFO 6556 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-09-15 10:04:10.648  INFO 6556 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-09-15 10:04:10.648  INFO 6556 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-09-15 10:04:10.662  INFO 6556 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-09-15 10:04:10.892  INFO 6556 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 10:04:10.892  INFO 6556 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3676 ms
+2020-09-15 10:04:11.236  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/C:/Users/Administrator/.m2/repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2020-09-15 10:04:11.240  WARN 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2020-09-15 10:04:11.245  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2020-09-15 10:04:11.245  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = E:\xgx\水利\sever\hehu-master\transaction-logs
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 192.168.1.152.tm
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2020-09-15 10:04:11.246  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2020-09-15 10:04:11.247  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2020-09-15 10:04:11.247  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2020-09-15 10:04:11.247  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = -1
+2020-09-15 10:04:11.248  INFO 6556 --- [main] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2020-09-15 10:04:11.968  INFO 6556 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-09-15 10:04:12.010  INFO 6556 --- [main] c.a.d.xa.XATransactionalResource         : master: refreshed XAResource
+2020-09-15 10:04:14.240  INFO 6556 --- [main] c.s.guns.base.db.dao.DataBaseInfoDao     : 删除master的databaseInfo信息！删除1条！
+2020-09-15 10:04:14.516  INFO 6556 --- [main] c.s.guns.base.db.dao.DataBaseInfoDao     : 初始化master的databaseInfo信息！初始化1条！
+2020-09-15 10:04:15.362  INFO 6556 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 10:04:17.022  INFO 6556 --- [main] aultActiviti5CompatibilityHandlerFactory : Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+2020-09-15 10:04:18.094  INFO 6556 --- [main] o.a.engine.impl.ProcessEngineImpl        : ProcessEngine default created
+2020-09-15 10:04:19.273  INFO 6556 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/login', POST], []
+2020-09-15 10:04:19.273  INFO 6556 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/assets/**', GET], []
+2020-09-15 10:04:19.273  INFO 6556 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2020-09-15 10:04:19.273  INFO 6556 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/activiti-editor/**', GET], []
+2020-09-15 10:04:19.318  INFO 6556 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 10:04:19.402  INFO 6556 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b5e6983, org.springframework.security.web.context.SecurityContextPersistenceFilter@21f7c0be, org.springframework.security.web.header.HeaderWriterFilter@f6b128b, org.springframework.web.filter.CorsFilter@130a99fe, cn.stylefeng.guns.sys.core.auth.filter.JwtAuthorizationTokenFilter@7ee64b53, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5834298c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@77eb0e47, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31773d5b, org.springframework.security.web.session.SessionManagementFilter@7c7d83ff, org.springframework.security.web.access.ExceptionTranslationFilter@760b9444, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5c85ed05]
+2020-09-15 10:04:20.056  INFO 6556 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-09-15 10:04:20.067  INFO 6556 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-09-15 10:04:20.067  INFO 6556 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.1 created.
+2020-09-15 10:04:20.068  INFO 6556 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-09-15 10:04:20.069  INFO 6556 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-09-15 10:04:20.069  INFO 6556 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-09-15 10:04:20.069  INFO 6556 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.1
+2020-09-15 10:04:20.069  INFO 6556 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@6c418f0b
+2020-09-15 10:04:20.165  INFO 6556 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 10:04:20.199  INFO 6556 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 10:04:20.261  INFO 6556 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 10:04:20.459  INFO 6556 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2020-09-15 10:04:20.460  INFO 6556 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-09-15 10:04:20.516  INFO 6556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9666 (http) with context path ''
+2020-09-15 10:04:20.521  INFO 6556 --- [main] cn.stylefeng.guns.GunsApplication        : Started GunsApplication in 15.404 seconds (JVM running for 18.581)
+2020-09-15 10:04:20.623  INFO 6556 --- [main] c.s.g.s.m.consts.init.SysConfigInit      : 初始化常量17条！
+2020-09-15 10:04:20.763  INFO 6556 --- [main] c.s.guns.base.i18n.init.TranslationInit  : 初始化所有的翻译字典457条！
+2020-09-15 10:04:20.765  INFO 6556 --- [main] cn.stylefeng.guns.GunsApplication        : GunsApplication is success!
+2020-09-15 10:07:06.207  INFO 6556 --- [http-nio-9666-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1596616626,1596675597; rememberMe=true; username=admin; password=N2K46cg5ENl8dTSPCbj+TwBxc1PC8P2R0aF0uk6DhWpZcu1s+7QrtxY6LVTeopf+Mz36f94xPvVldXs5bbk1tA==] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-09-15 10:07:06.232  INFO 6556 --- [http-nio-9666-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 10:07:06.232  INFO 6556 --- [http-nio-9666-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-15 10:07:06.275  INFO 6556 --- [http-nio-9666-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 43 ms
+2020-09-15 10:07:08.905 ERROR 6556 --- [http-nio-9666-exec-4] c.s.guns.base.consts.ConstantsContext    : jwt密钥存在空值！常量名称：GUNS_JWT_SECRET，采用默认值：随机字符串->17h9uaz8cgmewnf7rcu832x4j4iab1i8，若想忽略此提示，请在开发管理->系统配置->参数配置，设置相关参数！
+2020-09-15 10:07:09.214 ERROR 6556 --- [http-nio-9666-exec-4] c.s.g.s.c.e.aop.GlobalExceptionHandler   : 运行时异常:
+
+org.springframework.web.util.NestedServletException: Handler dispatch failed; nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1054)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at cn.stylefeng.guns.sys.core.auth.filter.JwtAuthorizationTokenFilter.doFilterInternal(JwtAuthorizationTokenFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at cn.stylefeng.roses.core.xss.XssFilter.doFilter(XssFilter.java:31)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:209)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+Caused by: java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter
+	at io.jsonwebtoken.impl.Base64Codec.decode(Base64Codec.java:26)
+	at io.jsonwebtoken.impl.DefaultJwtBuilder.signWith(DefaultJwtBuilder.java:99)
+	at cn.stylefeng.guns.base.auth.jwt.JwtTokenUtil.generateToken(JwtTokenUtil.java:114)
+	at cn.stylefeng.guns.base.auth.jwt.JwtTokenUtil.generateToken(JwtTokenUtil.java:50)
+	at cn.stylefeng.guns.sys.core.auth.AuthServiceImpl.login(AuthServiceImpl.java:122)
+	at cn.stylefeng.guns.sys.core.auth.AuthServiceImpl.login(AuthServiceImpl.java:97)
+	at cn.stylefeng.guns.sys.core.auth.AuthServiceImpl$$FastClassBySpringCGLIB$$692aa9a2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at cn.stylefeng.guns.sys.core.auth.AuthServiceImpl$$EnhancerBySpringCGLIB$$2d58c1ff.login(<generated>)
+	at cn.stylefeng.guns.sys.modular.system.controller.LoginController.loginVali(LoginController.java:168)
+	at cn.stylefeng.guns.sys.modular.system.controller.LoginController$$FastClassBySpringCGLIB$$1cdcda1a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at cn.stylefeng.guns.tenant.aop.TenantSourceExAop.around(TenantSourceExAop.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at cn.stylefeng.guns.sys.modular.system.controller.LoginController$$EnhancerBySpringCGLIB$$b0429865.loginVali(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	... 59 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.DatatypeConverter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 104 common frames omitted
+
+2020-09-15 10:07:13.596 ERROR 6556 --- [http-nio-9666-exec-6] c.s.g.s.c.e.aop.GlobalExceptionHandler   : 运行时异常:
+
+org.springframework.web.util.NestedServletException: Handler dispatch failed; nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1054)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at cn.stylefeng.guns.sys.core.auth.filter.JwtAuthorizationTokenFilter.doFilterInternal(JwtAuthorizationTokenFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at cn.stylefeng.roses.core.xss.XssFilter.doFilter(XssFilter.java:31)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:209)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+Caused by: java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter
+	at io.jsonwebtoken.impl.Base64Codec.decode(Base64Codec.java:26)
+	at io.jsonwebtoken.impl.DefaultJwtBuilder.signWith(DefaultJwtBuilder.java:99)
+	at cn.stylefeng.guns.base.auth.jwt.JwtTokenUtil.generateToken(JwtTokenUtil.java:114)
+	at cn.stylefeng.guns.base.auth.jwt.JwtTokenUtil.generateToken(JwtTokenUtil.java:50)
+	at cn.stylefeng.guns.sys.core.auth.AuthServiceImpl.login(AuthServiceImpl.java:122)
+	at cn.stylefeng.guns.sys.core.auth.AuthServiceImpl.login(AuthServiceImpl.java:97)
+	at cn.stylefeng.guns.sys.core.auth.AuthServiceImpl$$FastClassBySpringCGLIB$$692aa9a2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at cn.stylefeng.guns.sys.core.auth.AuthServiceImpl$$EnhancerBySpringCGLIB$$2d58c1ff.login(<generated>)
+	at cn.stylefeng.guns.sys.modular.system.controller.LoginController.loginVali(LoginController.java:168)
+	at cn.stylefeng.guns.sys.modular.system.controller.LoginController$$FastClassBySpringCGLIB$$1cdcda1a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at cn.stylefeng.guns.tenant.aop.TenantSourceExAop.around(TenantSourceExAop.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at cn.stylefeng.guns.sys.modular.system.controller.LoginController$$EnhancerBySpringCGLIB$$b0429865.loginVali(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	... 59 common frames omitted
+
+2020-09-15 10:09:32.764  INFO 6860 --- [main] cn.stylefeng.guns.GunsApplication        : Starting GunsApplication on JXH39NCR0DHFMJG with PID 6860 (started by Administrator in E:\xgx\水利\sever\hehu-master)
+2020-09-15 10:09:32.766  INFO 6860 --- [main] cn.stylefeng.guns.GunsApplication        : The following profiles are active: dev
+2020-09-15 10:09:34.561  INFO 6860 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'webConfig' of type [cn.stylefeng.guns.config.web.WebConfig$$EnhancerBySpringCGLIB$$225dc165] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:09:34.618  INFO 6860 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:09:34.624  INFO 6860 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:09:34.625  INFO 6860 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:09:34.676  INFO 6860 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b7c01ebd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:09:34.906  INFO 6860 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$506de6f7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:09:34.911  INFO 6860 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:09:34.915  INFO 6860 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5792c08c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:09:34.918  INFO 6860 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$754289a9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:09:34.925  INFO 6860 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 10:09:35.253  INFO 6860 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9666 (http)
+2020-09-15 10:09:35.274  INFO 6860 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 10:09:35.274  INFO 6860 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-09-15 10:09:35.280  INFO 6860 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-09-15 10:09:35.280  INFO 6860 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-09-15 10:09:35.280  INFO 6860 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-09-15 10:09:35.283  INFO 6860 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-09-15 10:09:35.472  INFO 6860 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 10:09:35.472  INFO 6860 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2507 ms
+2020-09-15 10:09:35.764  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/C:/Users/Administrator/.m2/repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2020-09-15 10:09:35.767  WARN 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2020-09-15 10:09:35.771  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2020-09-15 10:09:35.771  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2020-09-15 10:09:35.771  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2020-09-15 10:09:35.771  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2020-09-15 10:09:35.771  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2020-09-15 10:09:35.771  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2020-09-15 10:09:35.771  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = E:\xgx\水利\sever\hehu-master\transaction-logs
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = -1
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 192.168.1.152.tm
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2020-09-15 10:09:35.772  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2020-09-15 10:09:35.773  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2020-09-15 10:09:35.773  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2020-09-15 10:09:35.774  INFO 6860 --- [main] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2020-09-15 10:09:36.386  INFO 6860 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-09-15 10:09:36.429  INFO 6860 --- [main] c.a.d.xa.XATransactionalResource         : master: refreshed XAResource
+2020-09-15 10:09:38.481  INFO 6860 --- [main] c.s.guns.base.db.dao.DataBaseInfoDao     : 删除master的databaseInfo信息！删除1条！
+2020-09-15 10:09:38.696  INFO 6860 --- [main] c.s.guns.base.db.dao.DataBaseInfoDao     : 初始化master的databaseInfo信息！初始化1条！
+2020-09-15 10:09:39.299  INFO 6860 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 10:09:41.462  INFO 6860 --- [main] aultActiviti5CompatibilityHandlerFactory : Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+2020-09-15 10:09:42.426  INFO 6860 --- [main] o.a.engine.impl.ProcessEngineImpl        : ProcessEngine default created
+2020-09-15 10:09:43.409  INFO 6860 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/login', POST], []
+2020-09-15 10:09:43.409  INFO 6860 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/assets/**', GET], []
+2020-09-15 10:09:43.409  INFO 6860 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2020-09-15 10:09:43.409  INFO 6860 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/activiti-editor/**', GET], []
+2020-09-15 10:09:43.449  INFO 6860 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 10:09:43.517  INFO 6860 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c46dc02, org.springframework.security.web.context.SecurityContextPersistenceFilter@68229a6, org.springframework.security.web.header.HeaderWriterFilter@38f63756, org.springframework.web.filter.CorsFilter@5606d537, cn.stylefeng.guns.sys.core.auth.filter.JwtAuthorizationTokenFilter@4bc6da03, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@477bea57, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67a3dd86, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b5390, org.springframework.security.web.session.SessionManagementFilter@34e68840, org.springframework.security.web.access.ExceptionTranslationFilter@6c851821, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b87ea8b]
+2020-09-15 10:09:44.029  INFO 6860 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-09-15 10:09:44.038  INFO 6860 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-09-15 10:09:44.038  INFO 6860 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.1 created.
+2020-09-15 10:09:44.039  INFO 6860 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-09-15 10:09:44.040  INFO 6860 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-09-15 10:09:44.040  INFO 6860 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-09-15 10:09:44.040  INFO 6860 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.1
+2020-09-15 10:09:44.040  INFO 6860 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@77e5c765
+2020-09-15 10:09:44.124  INFO 6860 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 10:09:44.141  INFO 6860 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 10:09:44.178  INFO 6860 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 10:09:44.302  INFO 6860 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2020-09-15 10:09:44.302  INFO 6860 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-09-15 10:09:44.337  INFO 6860 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9666 (http) with context path ''
+2020-09-15 10:09:44.341  INFO 6860 --- [main] cn.stylefeng.guns.GunsApplication        : Started GunsApplication in 13.058 seconds (JVM running for 14.013)
+2020-09-15 10:09:44.425  INFO 6860 --- [main] c.s.g.s.m.consts.init.SysConfigInit      : 初始化常量17条！
+2020-09-15 10:09:44.583  INFO 6860 --- [main] c.s.guns.base.i18n.init.TranslationInit  : 初始化所有的翻译字典457条！
+2020-09-15 10:09:44.587  INFO 6860 --- [main] cn.stylefeng.guns.GunsApplication        : GunsApplication is success!
+2020-09-15 10:10:53.644  INFO 6860 --- [http-nio-9666-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1596616626,1596675597; rememberMe=true; username=admin; password=N2K46cg5ENl8dTSPCbj+TwBxc1PC8P2R0aF0uk6DhWpZcu1s+7QrtxY6LVTeopf+Mz36f94xPvVldXs5bbk1tA==] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-09-15 10:10:53.656  INFO 6860 --- [http-nio-9666-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 10:10:53.656  INFO 6860 --- [http-nio-9666-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-15 10:10:53.668  INFO 6860 --- [http-nio-9666-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-09-15 10:10:54.918 ERROR 6860 --- [http-nio-9666-exec-3] c.s.guns.base.consts.ConstantsContext    : jwt密钥存在空值！常量名称：GUNS_JWT_SECRET，采用默认值：随机字符串->7x9gkriq2yeyrq3plauzixl6od4l9q38，若想忽略此提示，请在开发管理->系统配置->参数配置，设置相关参数！

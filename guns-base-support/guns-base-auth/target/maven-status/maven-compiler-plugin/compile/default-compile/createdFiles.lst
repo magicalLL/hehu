@@ -1,0 +1,12 @@
+cn\stylefeng\guns\base\auth\context\LoginContext.class
+cn\stylefeng\guns\base\auth\context\LoginContextHolder.class
+cn\stylefeng\guns\base\auth\service\AuthService.class
+cn\stylefeng\guns\base\auth\exception\enums\AuthExceptionEnum.class
+cn\stylefeng\guns\base\auth\exception\PermissionException.class
+cn\stylefeng\guns\base\auth\aop\PermissionAop.class
+cn\stylefeng\guns\base\auth\jwt\JwtTokenUtil.class
+cn\stylefeng\guns\base\auth\annotion\Permission.class
+cn\stylefeng\guns\base\auth\model\LoginUser.class
+cn\stylefeng\guns\base\auth\exception\AuthException.class
+cn\stylefeng\guns\base\auth\model\MyRole.class
+cn\stylefeng\guns\base\auth\jwt\payload\JwtPayLoad.class

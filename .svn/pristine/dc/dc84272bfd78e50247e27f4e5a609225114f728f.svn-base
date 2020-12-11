@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.hhsys.mapper.RasterlayersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.hhsys.entity.Rasterlayers">
+        <result column="id" property="id" />
+        <result column="index" property="dataindex" />
+        <result column="name" property="dataname" />
+        <result column="type" property="datatype" />
+        <result column="url" property="url" />
+        <result column="centerX" property="centerX" />
+        <result column="centerY" property="centerY" />
+        <result column="level" property="datalevel" />
+        <result column="detail" property="detail" />
+        <result column="wkid" property="wkid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS "id", data_index AS "index", data_name AS "name", data_type AS "type", url AS "url", centerX AS "centerX", centerY AS "centerY", data_level AS "level", detail AS "detail", wkid AS "wkid"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.RasterlayersResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.RasterlayersParam">
+        select
+        <include refid="Base_Column_List"/>
+        from rasterlayers where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.RasterlayersParam">
+        select
+        <include refid="Base_Column_List"/>
+        from rasterlayers where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.RasterlayersResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.RasterlayersParam">
+        select
+        <include refid="Base_Column_List"/>
+        from rasterlayers where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.RasterlayersParam">
+        select
+        <include refid="Base_Column_List"/>
+        from rasterlayers where 1 = 1
+    </select>
+
+</mapper>

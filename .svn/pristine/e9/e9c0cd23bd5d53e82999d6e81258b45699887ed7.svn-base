@@ -1,0 +1,106 @@
+@layout("/common/_form.html",{js:["/assets/cityResource/cityResource_add.js"],css:["/assets/expand/module/formSelects/formSelects-v4.css"]}){
+
+<form class="layui-form" id="cityResourceForm" lay-filter="cityResourceForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <input name="" type="hidden"/>
+
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">资源编号<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="id" name="id" placeholder="请输入资源编号" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">资源名称<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="name" name="name" placeholder="请输入资源名称" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">服务类型<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="resourcetype" name="resourcetype" placeholder="请输入0离线数据，1在线服务，2北斗服务，3手机服务，4视频服务" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">别名<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="aliasname" name="aliasname" placeholder="请输入别名" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">摘要<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="abstract" name="abstract" placeholder="请输入摘要" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">关键词<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="keyword" name="keyword" placeholder="请输入关键词" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">服务状态<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="runstate" name="runstate" placeholder="请输入0启动，1停止" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">发布者<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="publishuserid" name="publishuserid" placeholder="请输入发布者" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">发布日期<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="publishdate" name="publishdate" placeholder="请输入发布日期" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">主题部门编号<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="catalogDeptid" name="catalogDeptid" placeholder="请输入主题部门编号" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">主题编号<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="catalogThemeid" name="catalogThemeid" placeholder="请输入主题编号" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">服务类型编号<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="serviceTypeid" name="serviceTypeid" placeholder="请输入服务类型编号" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">服务状态<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="state" name="state" placeholder="请输入服务状态" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">缩略图编号<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="thumbnailId" name="thumbnailId" placeholder="请输入缩略图编号" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" id="cancel">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+
+@}

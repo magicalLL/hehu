@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.hhsys.mapper.CityFileMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.hhsys.entity.CityFile">
+        <id column="ID" property="id" />
+        <result column="FILENAME" property="filename" />
+        <result column="FILEPATH" property="filepath" />
+        <result column="FILETYPE" property="filetype" />
+        <result column="createtime" property="createtime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID AS "id", FILENAME AS "filename", FILEPATH AS "filepath", FILETYPE AS "filetype", createtime AS "createtime"
+    </sql>
+
+    <sql id="Base_List">
+        ID AS "id", FILEPATH AS "filepath", FILETYPE AS "filetype", createtime AS "createtime"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.CityFileResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityFileParam">
+        select
+        <include refid="Base_Column_List"/>
+        from city_file where 1 = 1
+            <if test="paramCondition.filename != null and paramCondition.filename != ''">
+                and FILENAME like CONCAT('%',#{paramCondition.filename},'%')
+            </if>
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityFileParam">
+        select
+        <include refid="Base_Column_List"/>
+        from city_file where 1 = 1
+            <if test="paramCondition.filename != null and paramCondition.filename != ''">
+                and FILENAME like CONCAT('%',#{paramCondition.filename},'%')
+            </if>
+    </select>
+
+    <select id="customPageListCopy" resultType="cn.stylefeng.guns.modular.hhsys.model.result.CityFileResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityFileParam">
+        select
+        case when LENGTH(FILENAME)>50 then concat(LEFT(FILENAME,50),'...')	else FILENAME END  FILENAME,
+        <include refid="Base_List"/>
+        from city_file where 1 = 1
+        <if test="paramCondition.filename != null and paramCondition.filename != ''">
+            and FILENAME like CONCAT('%',#{paramCondition.filename},'%')
+        </if>
+        order by createtime DESC
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.CityFileResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityFileParam">
+        select
+        case when LENGTH(FILENAME)>9 then concat(LEFT(FILENAME,9),'...')	else FILENAME END  FILENAME,
+        <include refid="Base_List"/>
+        from city_file where 1 = 1
+            <if test="paramCondition.filename != null and paramCondition.filename != ''">
+                and FILENAME like CONCAT('%',#{paramCondition.filename},'%')
+            </if>
+        order by createtime DESC
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityFileParam">
+        select
+        <include refid="Base_Column_List"/>
+        from city_file where 1 = 1
+            <if test="paramCondition.filename != null and paramCondition.filename != ''">
+                and FILENAME like CONCAT('%',#{paramCondition.filename},'%')
+            </if>
+    </select>
+
+</mapper>

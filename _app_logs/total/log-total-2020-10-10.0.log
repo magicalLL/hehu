@@ -1,0 +1,86 @@
+2020-10-09 10:23:00.721  INFO 5180 --- [main] cn.stylefeng.guns.GunsApplication        : Starting GunsApplication on JXH39NCR0DHFMJG with PID 5180 (started by Administrator in E:\xgx\水利\sever\hehu-master)
+2020-10-09 10:23:00.725  INFO 5180 --- [main] cn.stylefeng.guns.GunsApplication        : The following profiles are active: dev
+2020-10-09 10:23:05.020  INFO 5180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'webConfig' of type [cn.stylefeng.guns.config.web.WebConfig$$EnhancerBySpringCGLIB$$5566cf2b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-09 10:23:05.092  INFO 5180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-09 10:23:05.120  INFO 5180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-09 10:23:05.121  INFO 5180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-09 10:23:05.197  INFO 5180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eac92c83] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-09 10:23:05.552  INFO 5180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$8376f4bd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-09 10:23:05.557  INFO 5180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-09 10:23:05.562  INFO 5180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3472947a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-09 10:23:05.562  INFO 5180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$a84b976f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-09 10:23:05.570  INFO 5180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-09 10:23:06.115  INFO 5180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9666 (http)
+2020-10-09 10:23:06.155  INFO 5180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-09 10:23:06.155  INFO 5180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-10-09 10:23:06.171  INFO 5180 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-10-09 10:23:06.171  INFO 5180 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-10-09 10:23:06.171  INFO 5180 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-10-09 10:23:06.181  INFO 5180 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-10-09 10:23:06.526  INFO 5180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-09 10:23:06.527  INFO 5180 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5378 ms
+2020-10-09 10:23:07.027  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/C:/Users/Administrator/.m2/repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2020-10-09 10:23:07.031  WARN 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2020-10-09 10:23:07.037  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = E:\xgx\水利\sever\hehu-master\transaction-logs
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = -1
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2020-10-09 10:23:07.038  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2020-10-09 10:23:07.039  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2020-10-09 10:23:07.039  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 192.168.1.152.tm
+2020-10-09 10:23:07.039  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2020-10-09 10:23:07.039  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2020-10-09 10:23:07.039  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2020-10-09 10:23:07.039  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2020-10-09 10:23:07.039  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2020-10-09 10:23:07.041  INFO 5180 --- [main] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2020-10-09 10:23:07.874  INFO 5180 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-10-09 10:23:07.907  INFO 5180 --- [main] c.a.d.xa.XATransactionalResource         : master: refreshed XAResource
+2020-10-09 10:23:10.604  INFO 5180 --- [main] c.s.guns.base.db.dao.DataBaseInfoDao     : 删除master的databaseInfo信息！删除1条！
+2020-10-09 10:23:10.815  INFO 5180 --- [main] c.s.guns.base.db.dao.DataBaseInfoDao     : 初始化master的databaseInfo信息！初始化1条！
+2020-10-09 10:23:11.674  INFO 5180 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-09 10:23:13.725  INFO 5180 --- [main] aultActiviti5CompatibilityHandlerFactory : Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+2020-10-09 10:23:14.893  INFO 5180 --- [main] o.a.engine.impl.ProcessEngineImpl        : ProcessEngine default created
+2020-10-09 10:23:16.332  INFO 5180 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/login', POST], []
+2020-10-09 10:23:16.333  INFO 5180 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/assets/**', GET], []
+2020-10-09 10:23:16.333  INFO 5180 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2020-10-09 10:23:16.333  INFO 5180 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/activiti-editor/**', GET], []
+2020-10-09 10:23:16.379  INFO 5180 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-10-09 10:23:16.454  INFO 5180 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@468f2a6f, org.springframework.security.web.context.SecurityContextPersistenceFilter@767d9b9, org.springframework.security.web.header.HeaderWriterFilter@8167f57, org.springframework.web.filter.CorsFilter@6a3a56de, cn.stylefeng.guns.sys.core.auth.filter.JwtAuthorizationTokenFilter@6579cdbb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e8aea7e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@da9374c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ed84be9, org.springframework.security.web.session.SessionManagementFilter@59d0fac9, org.springframework.security.web.access.ExceptionTranslationFilter@efa04b5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6f4f2cc0]
+2020-10-09 10:23:17.198  INFO 5180 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-10-09 10:23:17.222  INFO 5180 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-10-09 10:23:17.222  INFO 5180 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.1 created.
+2020-10-09 10:23:17.223  INFO 5180 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-10-09 10:23:17.224  INFO 5180 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-10-09 10:23:17.224  INFO 5180 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-10-09 10:23:17.224  INFO 5180 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.1
+2020-10-09 10:23:17.224  INFO 5180 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@54087bdb
+2020-10-09 10:23:17.318  INFO 5180 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-10-09 10:23:17.358  INFO 5180 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-10-09 10:23:17.417  INFO 5180 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-10-09 10:23:17.676  INFO 5180 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2020-10-09 10:23:17.676  INFO 5180 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-10-09 10:23:17.734  INFO 5180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9666 (http) with context path ''
+2020-10-09 10:23:17.738  INFO 5180 --- [main] cn.stylefeng.guns.GunsApplication        : Started GunsApplication in 18.564 seconds (JVM running for 21.775)
+2020-10-09 10:23:17.884  INFO 5180 --- [main] c.s.g.s.m.consts.init.SysConfigInit      : 初始化常量17条！
+2020-10-09 10:23:18.019  INFO 5180 --- [main] c.s.guns.base.i18n.init.TranslationInit  : 初始化所有的翻译字典457条！
+2020-10-09 10:23:18.021  INFO 5180 --- [main] cn.stylefeng.guns.GunsApplication        : GunsApplication is success!

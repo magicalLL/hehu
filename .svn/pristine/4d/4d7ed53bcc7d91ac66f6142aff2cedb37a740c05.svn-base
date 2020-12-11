@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.hhsys.mapper.CityResourceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.hhsys.entity.CityResource">
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="resourcetype" property="resourcetype" />
+        <result column="aliasname" property="aliasname" />
+        <result column="abstract" property="abstract" />
+        <result column="keyword" property="keyword" />
+        <result column="runstate" property="runstate" />
+        <result column="publishuserid" property="publishuserid" />
+        <result column="publishdate" property="publishdate" />
+        <result column="catalog_deptid" property="catalogDeptid" />
+        <result column="catalog_themeid" property="catalogThemeid" />
+        <result column="service_typeid" property="serviceTypeId" />
+        <result column="state" property="state" />
+        <result column="thumbnail_id" property="thumbnailId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS "id", name AS "name", resourcetype AS "resourcetype", aliasname AS "aliasname", abstract AS "abstractValue", keyword AS "keyword", runstate AS "runstate", publishuserid AS "publishuserid", publishdate AS "publishdate", catalog_deptid AS "catalogDeptid", catalog_themeid AS "catalogThemeid", service_typeid AS "serviceTypeId", state AS "state", thumbnail_id AS "thumbnailId"
+    </sql>
+
+    <select id="findByResourceId" resultType="cn.stylefeng.guns.modular.hhsys.model.result.CityResourceResult" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from city_resource where id = #{id}
+    </select>
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.CityResourceResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityResourceParam">
+        select
+        <include refid="Base_Column_List"/>
+        from city_resource where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityResourceParam">
+        select
+        <include refid="Base_Column_List"/>
+        from city_resource where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.CityResourceResult" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from city_resource where state = ${state}
+       <if test="name!=null and name!=''"> and name like concat('%',#{name},'%') </if>
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityResourceParam">
+        select
+        <include refid="Base_Column_List"/>
+        from city_resource where 1 = 1
+    </select>
+
+</mapper>

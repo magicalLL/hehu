@@ -1,0 +1,189 @@
+package cn.stylefeng.guns.modular.hhsys.proxy;
+
+import com.google.common.collect.Sets;
+import org.apache.commons.httpclient.*;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.httpclient.params.HttpConnectionManagerParams;
+import org.apache.commons.lang3.StringUtils;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Set;
+
+/**
+ * .
+ *
+ * @author <a href="mailto:lanxy88@gmail.com">NelsonXu</a>
+ * @version V1.0, 2014/8/29 14:30
+ */
+public class AbstractServiceProcessor implements ServiceProcessor {
+
+    public static final Set<String> INPUT_IGRONES = Sets.newHashSet("accept-encoding", "cookie", "content-length");
+    public static final Set<String> OUTPUT_ALLOWS = Sets.newHashSet("cache-control", "etag", "last-modified", "date");
+
+    private MultiThreadedHttpConnectionManager cm = new MultiThreadedHttpConnectionManager();
+
+    private HttpClient httpClient;
+
+    private int maxTotal = 200;
+
+    private int maxPerRoute = 20;
+
+    /**
+     *
+     */
+    public static final String DEFAULT_ENCODING = "UTF-8";
+
+    /**
+     *
+     */
+    private int defaultTimeout = 80000;
+
+    /**
+     * get
+     *
+     * @param url
+     * @param request
+     * @return
+     */
+    private HttpMethod get(String url, HttpServletRequest request) {
+        if (StringUtils.isBlank(url)) throw new RuntimeException("request url is null");
+        HttpMethod get = new GetMethod(url);
+        setMethodParams(get, request);
+        return get;
+    }
+
+    /**
+     * post
+     *
+     * @param url
+     * @param request
+     * @return
+     */
+    private HttpMethod post(String url, HttpServletRequest request) {
+        if (StringUtils.isBlank(url)) throw new RuntimeException("request url is null");
+        HttpMethod post = new PostMethod(url);
+        Enumeration enumeration = request.getParameterNames();
+        while (enumeration.hasMoreElements()) {
+            String name = (String) enumeration.nextElement();
+            ((PostMethod) post).addParameter(name, request.getParameter(name));
+        }
+        setMethodParams(post, request);
+        return post;
+    }
+
+    /**
+     * set default
+     *
+     * @param method
+     */
+    protected void setMethodParams(HttpMethod method, HttpServletRequest request) {
+        if (request.getQueryString() != null)
+            method.setQueryString(method.getQueryString() + "&" + request.getQueryString());
+        Enumeration enumeration = request.getHeaderNames();
+        while (enumeration.hasMoreElements()) {
+            String name = (String) enumeration.nextElement();
+            if (!INPUT_IGRONES.contains(name.toLowerCase()))
+                method.setRequestHeader(name, request.getHeader(name));
+        }
+        method.getParams().setSoTimeout(defaultTimeout);
+//        method.getParams().setContentCharset(DEFAULT_ENCODING);
+//        method.getParams().setUriCharset(DEFAULT_ENCODING);
+    }
+
+
+    /**
+     * request
+     *
+     * @param method
+     * @return
+     */
+    private void requestAndResponse(HttpMethod method, HttpServletResponse response, HttpServletRequest ogRequest) throws IOException {
+        try {
+            HttpClient httpClient1 = getHttpClient();
+            int status  = httpClient1.executeMethod(method);
+            response.setHeader("Access-Control-Allow-Origin", "*");
+            response.setStatus(status);
+            for (Header header : method.getResponseHeaders()) {
+                if (OUTPUT_ALLOWS.contains(header.getName().toLowerCase()))
+                    response.setHeader(header.getName(), header.getValue());
+            }
+            response.getOutputStream().write(processContent(method.getResponseBody(), ((HttpMethodBase) method).getResponseCharSet(), method.getURI().getURI(), ogRequest.getRequestURI()));
+            response.flushBuffer();
+        } catch (Exception e) {
+            try {
+                throw new RuntimeException(" request url [" + method.getURI() + "] error [" + e.getLocalizedMessage() + "]");
+            } catch (URIException e1) {
+                e1.printStackTrace();
+            }
+        } finally {
+            System.out.println("==================================  requestAndResponse  ========================================");
+            System.out.println(response.getOutputStream());
+            method.releaseConnection();
+        }
+    }
+
+    /**
+     * 重写用来实现不同返回过程处理
+     *
+     * @param content
+     * @param charSet
+     * @param url
+     * @param proxyUrl
+     * @return
+     */
+    protected byte[] processContent(byte[] content, String charSet, String url, String proxyUrl) {
+        try {
+            return content == null ? "".getBytes(charSet) : content;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    /**
+     * default time
+     *
+     * @param defaultTimeout
+     */
+    public void setDefaultTimeout(int defaultTimeout) {
+        this.defaultTimeout = defaultTimeout;
+    }
+
+    /**
+     * service process
+     *
+     * @param url
+     * @param request
+     * @param response
+     */
+    @Override
+    public void process(String url, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        HttpMethod method = null;
+        if ("post".equalsIgnoreCase(request.getMethod())) method = post(url, request);
+        else {
+            method = get(url, request);
+        }
+        System.out.println("================================== process ========================================");
+        System.out.println(response);
+        requestAndResponse(method, response, request);
+    }
+
+    /**
+     * @return
+     */
+    protected HttpClient getHttpClient() {
+        if (httpClient != null) return httpClient;
+        HttpConnectionManagerParams params = new HttpConnectionManagerParams();
+        params.setMaxTotalConnections(maxTotal);
+        params.setDefaultMaxConnectionsPerHost(maxPerRoute);
+        params.setConnectionTimeout(defaultTimeout);
+        params.setSoTimeout(defaultTimeout);
+        params.setTcpNoDelay(true);
+        cm.setParams(params);
+        httpClient = new HttpClient(cm);
+        return httpClient;
+    }
+}

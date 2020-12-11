@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.hhsys.mapper.WyhcMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.hhsys.entity.Wyhc">
+        <id column="id" property="id" />
+        <result column="tb_id" property="tbId" />
+        <result column="url" property="url" />
+        <result column="shr" property="shr" />
+        <result column="shsj" property="shsj" />
+        <result column="status" property="status" />
+        <result column="shyy" property="shyy" />
+        <result column="description" property="description" />
+        <result column="sbsj" property="sbsj" />
+        <result column="sbr" property="sbr" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS "id", tb_id AS "tbId", url AS "url", shr AS "shr", shsj AS "shsj", status AS "status", shyy AS "shyy", description AS "description", sbsj AS "sbsj", sbr AS "sbr", createtime AS "createTime", createbody AS "createBody", runstate AS "runState", jggc AS "jggc", bz AS "bz"
+    </sql>
+
+    <!--图斑上报插入语句-->
+    <insert id="addPatchReport" parameterType="java.util.Map" >
+      INSERT INTO WYHC(ID,TB_ID,URL,STATUS,DESCRIPTION,SBSJ,SBR,createbody,createtime,runstate,jggc,bz) VALUES
+      (#{ID,jdbcType=VARCHAR},
+       #{TBID,jdbcType=VARCHAR},
+       #{URL,jdbcType=VARCHAR},
+       #{STATUS,jdbcType=VARCHAR},
+       #{DESCRIPTION,jdbcType=VARCHAR},
+       #{SBSJ,jdbcType=TIMESTAMP},
+       #{SBR,jdbcType=VARCHAR},
+       #{createbody,jdbcType=VARCHAR},
+       #{createtime,jdbcType=TIMESTAMP},
+       #{runstate,jdbcType=VARCHAR},
+       #{jggc,jdbcType=VARCHAR},
+       #{bz,jdbcType=VARCHAR})
+    </insert>
+    <!--获取图斑列表-->
+    <select id="getPatchReportList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.WyhcResult" parameterType="java.util.Map">
+        select * from (select * from WYHC where STATUS IN
+        <foreach item="item" index="index" collection="statusList" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        ) A
+        <if test="tbid!=null and tbid!=''"> where TB_ID like concat('%',#{tbid},'%') </if>
+         limit #{pageIndex}, #{pageSize}
+    </select>
+
+    <!--获取核查总数-->
+    <select id="getPatchReportListCount" resultType="cn.stylefeng.guns.modular.hhsys.model.result.WyhcResult" parameterType="java.util.Map">
+        select * from WYHC where STATUS IN
+        <foreach item="item" index="index" collection="statusList" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        <if test="tbid!=null and tbid!=''"> and TB_ID like concat('%',#{tbid},'%') </if>
+    </select>
+
+    <!--图斑审核-->
+    <update id="updatePatchReport"  parameterType="java.util.Map">
+       UPDATE WYHC SET SHR=#{SHR,jdbcType=VARCHAR},STATUS=#{STATUS,jdbcType=VARCHAR},SHYY=#{SHYY,jdbcType=DOUBLE},SHSJ=#{SHSJ,jdbcType=DATE}
+       WHERE ID=#{ID,jdbcType=VARCHAR}
+   </update>
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.WyhcResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.WyhcParam">
+        select
+        <include refid="Base_Column_List"/>
+        from wyhc where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.WyhcParam">
+        select
+        <include refid="Base_Column_List"/>
+        from wyhc where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.WyhcResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.WyhcParam">
+        select
+        <include refid="Base_Column_List"/>
+        from wyhc where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.WyhcParam">
+        select
+        <include refid="Base_Column_List"/>
+        from wyhc where 1 = 1
+    </select>
+
+    <select id="getPatchReportInfoByTBID" resultType="cn.stylefeng.guns.modular.hhsys.model.result.WyhcResult" parameterType="java.util.Map">
+        SELECT * FROM WYHC T WHERE T.TB_ID=#{tbid,jdbcType=VARCHAR} AND T.STATUS IN('0','1','2')
+    </select>
+
+</mapper>

@@ -1,0 +1,7 @@
+cn\stylefeng\guns\oauth2\factory\OAuthRequestFactory.class
+cn\stylefeng\guns\oauth2\mapper\OauthUserInfoMapper.class
+cn\stylefeng\guns\oauth2\controller\OAuthController.class
+cn\stylefeng\guns\oauth2\service\LoginService.class
+cn\stylefeng\guns\oauth2\service\impl\OauthUserInfoServiceImpl.class
+cn\stylefeng\guns\oauth2\factory\OAuthUserInfoFactory.class
+cn\stylefeng\guns\oauth2\service\impl\DefaultLoginService.class

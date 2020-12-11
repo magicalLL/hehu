@@ -1,0 +1,8 @@
+{
+	"code":200,
+	"data":{
+		"token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA3NDA2NTg0LCJ1c2VySWQiOjEsImlhdCI6MTYwNjgwMTc4NCwiYWNjb3VudCI6ImFkbWluICIsInVzZXJLZXkiOiJ4eHh4In0.YIPClKzu3l-cUvodewLEm8fFsuX5K86MJDzXNxEEwQlReKRDfL9HkTXjPP8ptlx9gyXXlrbNcQ0MHqD47chv-A"
+	},
+	"message":"请求成功",
+	"success":true
+}

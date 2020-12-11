@@ -1,0 +1,21 @@
+{
+	"code":200,
+	"data":{
+		"code":0,
+		"list":[
+			{
+				"ymin":32.88206546319513,
+				"xmin":119.65608138981649,
+				"ymax":33.770688151856234,
+				"xmax":120.93592605855959
+			}
+		],
+		"msg":"坐标转换成功!!!",
+		"pageNo":0,
+		"pageSize":0,
+		"result":true,
+		"totalCount":0
+	},
+	"message":"请求成功",
+	"success":true
+}

@@ -1,0 +1,54 @@
+package cn.stylefeng.guns.modular.hhsys.proxy;
+
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+/**
+ * .
+ *
+ * @author <a href="mailto:lanxy88@gmail.com">NelsonXu</a>
+ * @version V1.0, 2014/8/28 17:15
+ */
+public class ArcGISServiceHandlerImpl implements ServiceHandler {
+
+    private Map processors = new ConcurrentHashMap();
+
+    /**
+     * handler service
+     *
+     * @param serviceType
+     * @param paths
+     * @param originalUrl
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    @Override
+    public void handler(ServiceType serviceType, String[] paths, String originalUrl, HttpServletRequest request, HttpServletResponse response) throws Exception {
+       if(processors.size()==0)
+       {
+           processors.put("rest",new AGSRestProcessor());
+           processors.put("title",new AGSRestProcessor());
+       }
+
+        String[] sub = (String[]) ArrayUtils.subarray(paths, 3, paths.length);
+        if (serviceType.equals(ServiceType.tile)) ArrayUtils.add(sub, 0, ServiceType.tile.name());
+        String url = originalUrl.concat((originalUrl.endsWith("/") ? "" : "/") + StringUtils.join(sub, "/"));
+        ServiceProcessor processor = (ServiceProcessor) processors.get(serviceType.name());
+        if (processor == null) throw new RuntimeException(" processor [" + serviceType.name() + "] not set ");
+        System.out.println("==================================handler========================================");
+        System.out.println(response);
+        processor.process(url, request, response);
+    }
+
+    @Override
+    public void setProcessor(Map processors) {
+        this.processors = processors;
+    }
+
+}

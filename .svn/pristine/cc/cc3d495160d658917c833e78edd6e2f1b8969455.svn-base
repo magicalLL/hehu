@@ -1,0 +1,110 @@
+@layout("/common/_form.html",{js:["/assets/cityResource/cityResource_edit.js"]}){
+
+<form class="layui-form" id="cityResourceForm" lay-filter="cityResourceForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-header">图层服务基本信息</div>
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <input id="id" name="id" type="hidden"/>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">服务地址<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="resourceAddress" name="resourceAddress" placeholder="请输入服务地址" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">服务类型<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select id="resourceType" name="resourceType" lay-filter="simpleSelect" lay-verify="required" required>
+                                <option value="0000">请选择服务类型</option>
+                                <option value="0001">WMS</option>
+                                <option value="0002">WMTS</option>
+                                <option value="0004">WFS</option>
+                                <option value="0005">WCS</option>
+                                <option value="0007">TILED_MAPSERVER</option>
+                                <option value="0008">DYNAMIC_MAPSERVER</option>
+                                <option value="0009">GP</option>
+                                <option value="0026">FUNC</option>
+                                <option value="0027">OTHER</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">服务名<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="resourceName" name="resourceName" placeholder="请输入服务名" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">服务别名<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="resourceAliasName" name="resourceAliasName" placeholder="请输入服务别名" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">服务简介<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="resourceAbstract" name="resourceAbstract" placeholder="请输入服务简介" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">关键词<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="resourceKeyword" name="resourceKeyword" placeholder="请输入关键词" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">服务状态<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" id="resourceRunstate" checked name="resourceRunstate" lay-skin="switch" lay-text="ON|OFF" lay-verify="required" required>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">发布者<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="publishUserid" name="publishUserid" type="hidden" class="layui-input" lay-verify="required" required/>
+                            <input id="publishUserName" name="publishUserName" type="text" class="layui-input" lay-verify="required" required disabled/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">发布日期<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="publishDate" name="publishDate" placeholder="请输入发布日期" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">联系方式<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="phoneNumber" name="phoneNumber" placeholder="请输入联系方式" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">字段主题</label>
+                        <div class="layui-input-block">
+                            <select id="fieldSubject" name="fieldSubject" lay-filter="simpleSelect">
+                                <option value="">请选择图层字段主题</option>
+                                <option value="allinfo">allinfo</option>
+                                <option value="infowindow">infowindow</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">图层字段</label>
+                        <div class="layui-input-block">
+                            <input id="layerFiled" name="layerFiled" placeholder="请输入显示的图层字段,用空格隔开" type="text" class="layui-input"/>
+                            <input id="verifyState" name="verifyState" type="hidden"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" id="cancel">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+
+@}

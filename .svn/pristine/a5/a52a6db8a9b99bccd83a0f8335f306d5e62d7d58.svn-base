@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.test.mapper.TestMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.test.entity.Test">
+        <id column="id" property="id" />
+        <result column="test1" property="test1" />
+        <result column="test2" property="test2" />
+        <result column="test3" property="test3" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS "id", test1 AS "test1", test2 AS "test2", test3 AS "test3"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.test.model.result.TestResult" parameterType="cn.stylefeng.guns.modular.test.model.params.TestParam">
+        select
+        <include refid="Base_Column_List"/>
+        from test where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.test.model.params.TestParam">
+        select
+        <include refid="Base_Column_List"/>
+        from test where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.test.model.result.TestResult" parameterType="cn.stylefeng.guns.modular.test.model.params.TestParam">
+        select
+        <include refid="Base_Column_List"/>
+        from test where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.test.model.params.TestParam">
+        select
+        <include refid="Base_Column_List"/>
+        from test where 1 = 1
+    </select>
+
+</mapper>

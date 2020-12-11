@@ -1,0 +1,18 @@
+package cn.stylefeng.guns.modular.hhsys.proxy;
+
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+//@Configuration
+public class InterceptoeConfigurer implements WebMvcConfigurer {
+//
+//    @Autowired
+//    private ServiceHandlerInterceptor serviceHandlerInterceptor;
+//
+//
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry){
+//        // 自定义拦截器，拦截图层服务请求
+//        registry.addInterceptor(serviceHandlerInterceptor).addPathPatterns("/");
+//    }
+
+}

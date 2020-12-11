@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-base/guns-base.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-base/guns-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-base-auth/guns-base-auth.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-base-auth/guns-base-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-base-support.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-base-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-base-timers/guns-base-timers.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-base-timers/guns-base-timers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-dbctn/guns-dbctn.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-dbctn/guns-dbctn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-excel/guns-excel.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-excel/guns-excel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-generator/guns-generator.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-generator/guns-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-i18n/guns-i18n.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-i18n/guns-i18n.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-oauth2/guns-oauth2.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-oauth2/guns-oauth2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-sys/guns-sys.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-sys/guns-sys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-tenant/guns-tenant.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-tenant/guns-tenant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-vip.iml" filepath="$PROJECT_DIR$/guns-vip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-vip-main/guns-vip-main.iml" filepath="$PROJECT_DIR$/guns-vip-main/guns-vip-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-support/guns-workflow/guns-workflow.iml" filepath="$PROJECT_DIR$/guns-base-support/guns-workflow/guns-workflow.iml" />
+    </modules>
+  </component>
+</project>

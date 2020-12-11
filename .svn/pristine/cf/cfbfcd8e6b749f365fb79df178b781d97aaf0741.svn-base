@@ -1,0 +1,132 @@
+package cn.stylefeng.guns.modular.hhsys.controller;
+
+import cn.stylefeng.guns.base.pojo.page.LayuiPageInfo;
+import cn.stylefeng.guns.modular.hhsys.entity.CityResults;
+import cn.stylefeng.guns.modular.hhsys.model.params.CityResultsParam;
+import cn.stylefeng.guns.modular.hhsys.service.CityResultsService;
+import cn.stylefeng.roses.core.base.controller.BaseController;
+import cn.stylefeng.roses.kernel.model.response.ResponseData;
+import cn.stylefeng.roses.kernel.model.response.SuccessResponseData;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+
+/**
+ * 控制器
+ *
+ * @author lls
+ * @Date 2020-11-13 11:24:54
+ */
+@Controller
+@RequestMapping("/cityResults")
+public class CityResultsController extends BaseController {
+
+    private String PREFIX = "/cityResults";
+
+    @Autowired
+    private CityResultsService cityResultsService;
+
+    /**
+     * 跳转到主页面
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("")
+    public String index() {
+        return PREFIX + "/cityResults.html";
+    }
+
+    /**
+     * 新增页面
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/add")
+    public String add() {
+        return PREFIX + "/cityResults_add.html";
+    }
+
+    /**
+     * 编辑页面
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/edit")
+    public String edit() {
+        return PREFIX + "/cityResults_edit.html";
+    }
+
+    /**
+     * 新增接口
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/addItem")
+    @ResponseBody
+    public ResponseData addItem(CityResultsParam cityResultsParam) {
+        this.cityResultsService.add(cityResultsParam);
+        return ResponseData.success();
+    }
+
+    /**
+     * 编辑接口
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/editItem")
+    @ResponseBody
+    public ResponseData editItem(CityResultsParam cityResultsParam) {
+        this.cityResultsService.update(cityResultsParam);
+        return ResponseData.success();
+    }
+
+    /**
+     * 删除接口
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/delete")
+    @ResponseBody
+    public ResponseData delete(CityResultsParam cityResultsParam) {
+        this.cityResultsService.delete(cityResultsParam);
+        return ResponseData.success();
+    }
+
+    /**
+     * 查看详情接口
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/detail")
+    @ResponseBody
+    public ResponseData detail(CityResultsParam cityResultsParam) {
+        CityResults detail = this.cityResultsService.getById(cityResultsParam.getId());
+        return ResponseData.success(detail);
+    }
+
+    /**
+     * 查询列表
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @ResponseBody
+    @RequestMapping("/list")
+    public ResponseData list(CityResultsParam cityResultsParam) {
+        LayuiPageInfo layuiPageInfo = this.cityResultsService.findPageBySpec(cityResultsParam);
+//        return this.cityResultsService.findPageBySpec(cityResultsParam);
+        return new SuccessResponseData(layuiPageInfo.getData());
+    }
+
+}
+
+

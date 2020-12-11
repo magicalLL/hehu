@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.hhsys.mapper.ServiceMatedataMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.hhsys.entity.ServiceMatedata">
+        <result column="id" property="id" />
+        <result column="resourceid" property="resourceid" />
+        <result column="name" property="name" />
+        <result column="title" property="title" />
+        <result column="service_typeid" property="serviceTypeId" />
+        <result column="type_version" property="typeVersion" />
+        <result column="publish_url" property="publishUrl" />
+        <result column="raw_url" property="rawUrl" />
+        <result column="fileid" property="fileid" />
+        <result column="west" property="west" />
+        <result column="east" property="east" />
+        <result column="north" property="north" />
+        <result column="south" property="south" />
+        <result column="resource_owner_dept" property="resourceOwnerDept" />
+        <result column="resource_owner_dept_url" property="resourceOwnerDeptUrl" />
+        <result column="resource_owner" property="resourceOwner" />
+        <result column="resource_owner_job" property="resourceOwnerJob" />
+        <result column="country" property="country" />
+        <result column="city" property="city" />
+        <result column="address" property="address" />
+        <result column="postcode" property="postcode" />
+        <result column="tele" property="tele" />
+        <result column="fax" property="fax" />
+        <result column="email" property="email" />
+        <result column="access_restriction" property="accessRestriction" />
+        <result column="use_restriction" property="useRestriction" />
+        <result column="spatial_reference" property="spatialReference" />
+        <result column="spatial_type" property="spatialType" />
+        <result column="spatial_resolution" property="spatialResolution" />
+        <result column="subject_type" property="subjectType" />
+        <result column="other_description" property="otherDescription" />
+        <result column="layermetadataid" property="layermetadataid" />
+        <result column="manifacture_date" property="manifactureDate" />
+        <result column="timemark" property="timemark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS "id", resourceid AS "resourceid", name AS "name", title AS "title", service_typeid AS "serviceTypeId", type_version AS "typeVersion", publish_url AS "publishUrl", raw_url AS "rawUrl", fileid AS "fileid", west AS "west", east AS "east", north AS "north", south AS "south", resource_owner_dept AS "resourceOwnerDept", resource_owner_dept_url AS "resourceOwnerDeptUrl", resource_owner AS "resourceOwner", resource_owner_job AS "resourceOwnerJob", country AS "country", city AS "city", address AS "address", postcode AS "postcode", tele AS "tele", fax AS "fax", email AS "email", access_restriction AS "accessRestriction", use_restriction AS "useRestriction", spatial_reference AS "spatialReference", spatial_type AS "spatialType", spatial_resolution AS "spatialResolution", subject_type AS "subjectType", other_description AS "otherDescription", layermetadataid AS "layermetadataid", manifacture_date AS "manifactureDate", timemark AS "timemark"
+    </sql>
+
+
+    <select id="findByResourceId" resultType="cn.stylefeng.guns.modular.hhsys.model.result.ServiceMatedataResult" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from service_matedata where resourceid = #{resourceid}
+    </select>
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.ServiceMatedataResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.ServiceMatedataParam">
+        select
+        <include refid="Base_Column_List"/>
+        from service_matedata where 1 = 1
+    </select>
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.ServiceMatedataResult" >
+        select
+        <include refid="Base_Column_List"/>
+        from service_matedata where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.ServiceMatedataParam">
+        select
+        <include refid="Base_Column_List"/>
+        from service_matedata where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.ServiceMatedataResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.ServiceMatedataParam">
+        select
+        <include refid="Base_Column_List"/>
+        from service_matedata where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.ServiceMatedataParam">
+        select
+        <include refid="Base_Column_List"/>
+        from service_matedata where 1 = 1
+    </select>
+
+</mapper>

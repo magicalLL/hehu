@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.hhsys.mapper.BzfieldMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.hhsys.entity.Bzfield">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="alias" property="alias" />
+        <result column="type" property="type" />
+        <result column="tableid" property="tableid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS "id", name AS "name", alias AS "alias", type AS "type", tableid AS "tableid"
+    </sql>
+
+
+    <insert id="insertBzfield" parameterType="Map">
+        insert into dc_bzfield
+        (
+        <if test="fields.size()>0">
+            <foreach collection="fields" index="index" item="item" open=""
+                     separator=" , " close="">
+                ${item.key}
+            </foreach>
+        </if>
+        )
+        values
+        (
+        <if test="fields.size()>0">
+            <foreach collection="fields" index="index" item="item" open=""
+                     separator=" , " close="">
+                #{item.value}
+            </foreach>
+        </if>
+        )
+    </insert>
+
+    <delete id="deleteByTableid" parameterType="Map">
+        delete from dc_bzfield where tableid = #{tableid}
+    </delete>
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.BzfieldResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.BzfieldParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_bzfield where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.BzfieldParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_bzfield where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.BzfieldResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.BzfieldParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_bzfield where 1 = 1
+    </select>
+
+    <select id="customPageListByTableid" resultType="cn.stylefeng.guns.modular.hhsys.model.result.BzfieldResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.BzfieldParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_bzfield where tableid = #{tableid}
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.BzfieldParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_bzfield where 1 = 1
+    </select>
+
+</mapper>

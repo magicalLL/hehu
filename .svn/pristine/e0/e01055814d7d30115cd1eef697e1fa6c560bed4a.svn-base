@@ -1,0 +1,1 @@
+2020-10-09 10:26:50.730 ERROR 5180 --- [http-nio-9666-exec-1] c.s.guns.base.consts.ConstantsContext    : jwt密钥存在空值！常量名称：GUNS_JWT_SECRET，采用默认值：随机字符串->0ad34wrjshj23uonlj3gp7nakd0zt0tw，若想忽略此提示，请在开发管理->系统配置->参数配置，设置相关参数！

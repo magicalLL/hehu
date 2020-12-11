@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.hhsys.mapper.CityResultsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.hhsys.entity.CityResults">
+        <result column="ID" property="id" />
+        <result column="NAME" property="name" />
+        <result column="IMG" property="img" />
+        <result column="URL" property="url" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID AS "id", NAME AS "name", IMG AS "img", URL AS "url"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.CityResultsResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityResultsParam">
+        select
+        <include refid="Base_Column_List"/>
+        from city_results where 1 = 1
+            <if test="paramCondition.NAME != null and paramCondition.NAME != ''">
+                and NAME like CONCAT('%',#{paramCondition.NAME},'%')
+            </if>
+        order by createtime DESC
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityResultsParam">
+        select
+        <include refid="Base_Column_List"/>
+        from city_results where 1 = 1
+            <if test="paramCondition.NAME != null and paramCondition.NAME != ''">
+                and NAME like CONCAT('%',#{paramCondition.NAME},'%')
+            </if>
+        order by createtime DESC
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.CityResultsResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityResultsParam">
+        select
+        <include refid="Base_Column_List"/>
+        from city_results where 1 = 1
+            <if test="paramCondition.NAME != null and paramCondition.NAME != ''">
+                and NAME like CONCAT('%',#{paramCondition.NAME},'%')
+            </if>
+        order by createtime DESC
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.CityResultsParam">
+        select
+        <include refid="Base_Column_List"/>
+        from city_results where 1 = 1
+            <if test="paramCondition.NAME != null and paramCondition.NAME != ''">
+                and NAME like CONCAT('%',#{paramCondition.NAME},'%')
+            </if>
+         order by createtime DESC
+    </select>
+
+</mapper>

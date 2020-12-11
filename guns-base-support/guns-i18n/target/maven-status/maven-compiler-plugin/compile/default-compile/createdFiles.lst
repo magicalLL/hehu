@@ -1,0 +1,3 @@
+cn\stylefeng\guns\i18n\controller\TranslationController.class
+cn\stylefeng\guns\i18n\mapper\TranslationMapper.class
+cn\stylefeng\guns\i18n\service\TranslationServiceImpl.class

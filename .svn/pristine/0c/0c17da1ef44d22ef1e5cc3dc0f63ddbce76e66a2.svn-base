@@ -1,0 +1,34 @@
+package cn.stylefeng.guns.modular.hhsys.proxy;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
+
+/**
+ * .
+ *
+ * @author <a href="mailto:lanxy88@gmail.com">NelsonXu</a>
+ * @version V1.0, 2014/8/28 16:21
+ */
+public interface ServiceHandler {
+
+    /**
+     * handler service
+     *
+     * @param serviceType
+     * @param paths
+     * @param originalUrl
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    void handler(ServiceType serviceType, String[] paths, String originalUrl, HttpServletRequest request, HttpServletResponse response) throws Exception;
+
+    /**
+     * set processors
+     *
+     * @param processors
+     */
+    void setProcessor(Map processors);
+
+}

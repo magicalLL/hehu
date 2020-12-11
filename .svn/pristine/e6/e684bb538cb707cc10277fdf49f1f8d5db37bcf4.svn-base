@@ -1,0 +1,321 @@
+package cn.stylefeng.guns.modular.hhsys.controller;
+
+import cn.stylefeng.guns.base.pojo.page.LayuiPageInfo;
+import cn.stylefeng.guns.modular.hhsys.entity.CityResource;
+import cn.stylefeng.guns.modular.hhsys.entity.ServiceInfo;
+import cn.stylefeng.guns.modular.hhsys.entity.ServiceMatedata;
+import cn.stylefeng.guns.modular.hhsys.model.params.CityResourceParam;
+import cn.stylefeng.guns.modular.hhsys.model.params.ServiceMatedataParam;
+import cn.stylefeng.guns.modular.hhsys.model.result.CityResourceResult;
+import cn.stylefeng.guns.modular.hhsys.model.result.ServiceMatedataResult;
+import cn.stylefeng.guns.modular.hhsys.service.CityResourceService;
+import cn.stylefeng.guns.modular.hhsys.service.ServiceMatedataService;
+import cn.stylefeng.guns.modular.hhsys.service.TokenService;
+import cn.stylefeng.guns.modular.hhsys.utils.ServiceUtil;
+import cn.stylefeng.roses.core.base.controller.BaseController;
+import cn.stylefeng.roses.core.util.ToolUtil;
+import cn.stylefeng.roses.kernel.model.response.ResponseData;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+
+/**
+ * 控制器
+ *
+ * @author lls
+ * @Date 2020-11-03 09:35:52
+ */
+@Controller
+@RequestMapping("/cityResource")
+public class CityResourceController extends BaseController {
+
+    private String PREFIX = "/cityResource";
+
+    @Autowired
+    private CityResourceService cityResourceService;
+
+    @Autowired
+    private TokenService tokenService;
+
+    @Autowired
+    private ServiceMatedataService serviceMatedataService;
+
+    /**
+     * 跳转到主页面-申请清单
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @RequestMapping("")
+    public String index() {
+        return PREFIX + "/cityResource.html";
+    }
+
+    /**
+     * 跳转到主页面-资源管理
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @RequestMapping("manager")
+    public String indexManager() {
+        return PREFIX + "/cityResourceManager.html";
+    }
+
+    /**
+     * 跳转到主页面-审核清单
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @RequestMapping("verity")
+    public String indexVerity() {
+        return PREFIX + "/cityResourceVerity.html";
+    }
+
+    /**
+     * 新增页面
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @RequestMapping("/add")
+    public String add() {
+        return PREFIX + "/cityResource_add.html";
+    }
+
+    /**
+     * 编辑页面
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @RequestMapping("/edit")
+    public String edit() {
+        return PREFIX + "/cityResource_edit.html";
+    }
+
+    /**
+     * 新增接口
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @RequestMapping(value = "/addItem", method = RequestMethod.POST,  produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public ResponseData addItem(@RequestParam Map<String,Object> params) throws ParseException {
+
+        String userId = params.get("publishUserid").toString();
+        String resourceId = UUID.randomUUID().toString();
+        resourceId = resourceId.replaceAll("-","");
+        String resourceType = params.get("resourceType").toString();
+
+        CityResourceParam cityResourceParam = new CityResourceParam();
+        cityResourceParam.setState(0);
+        cityResourceParam.setId(resourceId);
+        cityResourceParam.setPublishdate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(params.get("publishDate").toString()));
+        cityResourceParam.setAliasname(params.get("resourceAliasName").toString());
+        cityResourceParam.setResourcetype("1");
+        cityResourceParam.setServiceTypeId(resourceType);
+        cityResourceParam.setCatalogDeptid(params.get("deptId").toString());
+        cityResourceParam.setCatalogThemeid("0001");
+        cityResourceParam.setAbstractValue(params.get("resourceAbstract").toString());
+        cityResourceParam.setKeyword(params.get("resourceKeyword").toString());
+        cityResourceParam.setPublishuserid(userId);
+        cityResourceParam.setName(params.get("resourceName").toString());
+        cityResourceParam.setRunstate(Integer.valueOf( params.get("resourceRunstate").toString()));
+        this.cityResourceService.add(cityResourceParam);
+
+        String rawUrl = params.get("resourceAddress").toString();
+        ServiceInfo serviceInfo = new ServiceInfo();
+        switch (resourceType){
+            case "0001":
+                serviceInfo = ServiceUtil.getWMSBaseInfo(rawUrl);
+                break;
+            case "0002":
+                serviceInfo = ServiceUtil.getWMTSBaseInfo(rawUrl);
+                break;
+            case "0004":
+                serviceInfo = ServiceUtil.getWFSBaseInfo(rawUrl);
+                break;
+            case "0005":
+                serviceInfo = ServiceUtil.getWCSBaseInfo(rawUrl);
+                break;
+            case "0007":
+            case "0008":
+                serviceInfo = ServiceUtil.getMAPSERVERBaseInfo(rawUrl);
+                break;
+            case "0009":
+            case "0026":
+            case "0027":
+        }
+
+//        ServiceInfo serviceInfo = ServiceUtil.getMAPSERVERBaseInfo(params.get("resourceAddress").toString());
+        ServiceMatedata serviceMatedata = serviceInfo.getServiceMetaData();
+        serviceMatedata.setResourceid(resourceId);
+        serviceMatedata.setTele(params.get("phoneNumber").toString());
+        serviceMatedata.setSubjectType(params.get("fieldSubject").toString());
+        serviceMatedata.setOtherDescription(params.get("layerFiled").toString());
+        serviceMatedata.setRawUrl(rawUrl);
+        serviceMatedata.setName(params.get("resourceName").toString());
+        serviceMatedata.setServiceTypeId(resourceType);
+        serviceMatedata.setResourceOwner(params.get("publishUserName").toString());
+        serviceMatedata.setResourceOwnerDept(params.get("deptName").toString());
+
+        this.serviceMatedataService.add(serviceMatedata);
+
+        this.tokenService.add(resourceId,userId);
+        return ResponseData.success();
+    }
+
+    /**
+     * 编辑接口
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @RequestMapping(value = "/editItem", method = RequestMethod.POST,  produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public ResponseData editItem(@RequestParam Map<String, Object> params) throws ParseException {
+        String resourceId = params.get("id").toString();
+
+        //获取mateData数据
+        ServiceMatedataResult serviceMatedataResult = this.serviceMatedataService.findByResourceId(resourceId);
+        //插入resourceMateData新数据
+        serviceMatedataResult.setServiceTypeId(params.get("resourceType").toString());
+        serviceMatedataResult.setName(params.get("resourceName").toString());
+        serviceMatedataResult.setRawUrl(params.get("resourceAddress").toString());
+        serviceMatedataResult.setResourceOwner(params.get("publishUserName").toString());
+        serviceMatedataResult.setTele(params.get("phoneNumber").toString());
+        serviceMatedataResult.setSubjectType(params.get("fieldSubject").toString());
+        serviceMatedataResult.setOtherDescription(params.get("layerFiled").toString());
+        //获取resource数据
+        CityResource cityResource = this.cityResourceService.getById(resourceId);
+        //插入resource数据
+        cityResource.setAliasname(params.get("resourceAliasName").toString());
+        cityResource.setAbstractValue(params.get("resourceAbstract").toString());
+        cityResource.setKeyword(params.get("resourceKeyword").toString());
+        cityResource.setName(params.get("resourceName").toString());
+        cityResource.setPublishuserid(params.get("publishUserid").toString());
+        cityResource.setServiceTypeId("resourceType");
+        cityResource.setRunstate(Integer.valueOf(params.get("resourceRunstate").toString()));
+        cityResource.setPublishdate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(params.get("publishDate").toString()));
+        cityResource.setState(params.get("verifyState").hashCode());
+
+        ServiceMatedataParam serviceMatedataParam = new ServiceMatedataParam();
+        //转换插入对象类型
+        ToolUtil.copyProperties(serviceMatedataResult, serviceMatedataParam);
+        this.serviceMatedataService.update(serviceMatedataParam);
+
+        CityResourceParam cityResourceParam = new CityResourceParam();
+        //转换插入对象类型
+        ToolUtil.copyProperties(cityResource,cityResourceParam);
+        this.cityResourceService.update(cityResourceParam);
+
+        return ResponseData.success();
+    }
+
+    /**
+     * 删除接口
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @RequestMapping("/verity")
+    @ResponseBody
+    public ResponseData verity(@RequestParam Map<String, Object> params) {
+        CityResourceResult cityResourceResult = this.cityResourceService.findByResourceId(params.get("id").toString());
+        cityResourceResult.setState(1);
+
+        CityResourceParam cityResourceParam = new CityResourceParam();
+        ToolUtil.copyProperties(cityResourceResult,cityResourceParam);
+
+        this.cityResourceService.update(cityResourceParam);
+        return ResponseData.success();
+    }
+
+
+    /**
+     * 删除接口
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @RequestMapping("/delete")
+    @ResponseBody
+    public ResponseData delete(CityResourceParam cityResourceParam) {
+        this.cityResourceService.delete(cityResourceParam);
+        return ResponseData.success();
+    }
+
+    /**
+     * 查看详情接口
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @RequestMapping(value = "/detail", method = RequestMethod.POST,  produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public ResponseData detail(@RequestParam String resourceId) {
+        CityResource crdetail = this.cityResourceService.getById(resourceId);
+        ServiceMatedataResult smdetail = this.serviceMatedataService.findByResourceId(resourceId);
+        Map<String, Object> result = new HashMap<String,Object>();
+        result.put("id",resourceId);
+        result.put("resourceAddress",smdetail.getRawUrl());
+        result.put("resourceType",smdetail.getServiceTypeId());
+        result.put("resourceName",crdetail.getName());
+        result.put("resourceAliasName",crdetail.getAliasname());
+        result.put("resourceAbstract",crdetail.getAbstractValue());
+        result.put("resourceKeyword",crdetail.getKeyword());
+        result.put("resourceRunstate",crdetail.getRunstate());
+        result.put("publishUserid",crdetail.getPublishuserid());
+        result.put("publishUserName",smdetail.getResourceOwner());
+        result.put("publishDate",crdetail.getPublishdate());
+        result.put("phoneNumber",smdetail.getTele());
+        result.put("verifyState",crdetail.getState());
+        result.put("fieldSubject",smdetail.getSubjectType());
+        result.put("layerFiled", smdetail.getOtherDescription());
+
+        return ResponseData.success(result);
+    }
+
+    /**
+     * 查询列表
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @ResponseBody
+    @RequestMapping(value = "/searchLst", method =  RequestMethod.GET)
+    public LayuiPageInfo searchList(@RequestParam(value = "state") String state, @RequestParam(value = "name") String name) {
+        CityResourceParam cityResourceParam = new CityResourceParam();
+        cityResourceParam.setState(Integer.valueOf(state));
+        cityResourceParam.setName(name);
+        return this.cityResourceService.findPageBySpec(cityResourceParam);
+    }
+
+    /**
+     * 渲染列表
+     *
+     * @author lls
+     * @Date 2020-11-03
+     */
+    @ResponseBody
+    @RequestMapping(value = "/list", method =  RequestMethod.GET)
+    public LayuiPageInfo list(@RequestParam(value = "state") String state,@RequestParam(value = "name",defaultValue = "") String name) {
+        CityResourceParam cityResourceParam = new CityResourceParam();
+        cityResourceParam.setState(Integer.valueOf(state));
+        cityResourceParam.setName(name);
+        return this.cityResourceService.findPageBySpec(cityResourceParam);
+    }
+
+}
+
+

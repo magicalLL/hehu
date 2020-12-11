@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="guns-base" />
+        <module name="guns-base-auth" />
+        <module name="guns-base-timers" />
+        <module name="guns-dbctn" />
+        <module name="guns-excel" />
+        <module name="guns-generator" />
+        <module name="guns-i18n" />
+        <module name="guns-oauth2" />
+        <module name="guns-sys" />
+        <module name="guns-tenant" />
+        <module name="guns-vip-main" />
+        <module name="guns-workflow" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="guns-base" target="1.8" />
+      <module name="guns-base-auth" target="1.8" />
+      <module name="guns-base-support" target="1.8" />
+      <module name="guns-base-timers" target="1.8" />
+      <module name="guns-dbctn" target="1.8" />
+      <module name="guns-excel" target="1.8" />
+      <module name="guns-generator" target="1.8" />
+      <module name="guns-i18n" target="1.8" />
+      <module name="guns-oauth2" target="1.8" />
+      <module name="guns-sys" target="1.8" />
+      <module name="guns-tenant" target="1.8" />
+      <module name="guns-vip" target="1.8" />
+      <module name="guns-vip-main" target="1.8" />
+      <module name="guns-workflow" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="guns-base" options="" />
+      <module name="guns-base-auth" options="" />
+      <module name="guns-base-timers" options="" />
+      <module name="guns-dbctn" options="" />
+      <module name="guns-excel" options="" />
+      <module name="guns-generator" options="" />
+      <module name="guns-i18n" options="" />
+      <module name="guns-oauth2" options="" />
+      <module name="guns-sys" options="" />
+      <module name="guns-tenant" options="" />
+      <module name="guns-vip-main" options="" />
+      <module name="guns-workflow" options="" />
+    </option>
+  </component>
+</project>

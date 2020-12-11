@@ -1,0 +1,203 @@
+package cn.stylefeng.guns.modular.hhsys.controller;
+
+import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
+import cn.stylefeng.guns.base.pojo.page.LayuiPageInfo;
+import cn.stylefeng.guns.modular.hhsys.entity.CityFile;
+import cn.stylefeng.guns.modular.hhsys.model.params.CityFileParam;
+import cn.stylefeng.guns.modular.hhsys.service.CityFileService;
+import cn.stylefeng.guns.sys.core.util.FileDownload;
+import cn.stylefeng.guns.sys.modular.rest.service.RestNoticeService;
+import cn.stylefeng.guns.sys.modular.system.warpper.NoticeWrapper;
+import cn.stylefeng.roses.core.base.controller.BaseController;
+import cn.stylefeng.roses.kernel.model.response.ResponseData;
+import cn.stylefeng.roses.kernel.model.response.SuccessResponseData;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletResponse;
+import java.text.ParseException;
+import java.util.Map;
+
+
+/**
+ * 控制器
+ *
+ * @author lls
+ * @Date 2020-11-13 11:24:54
+ */
+@Controller
+@RequestMapping("/cityFile")
+public class CityFileController extends BaseController {
+
+    private String PREFIX = "/cityFile";
+
+    @Autowired
+    private CityFileService cityFileService;
+
+    @Autowired
+    private RestNoticeService restNoticeService;
+
+    /**
+     * 跳转到主页面
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("")
+    public String index() {
+        return PREFIX + "/cityFile.html";
+    }
+
+    /**
+     * 新增页面
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/add")
+    public String add() {
+        return PREFIX + "/cityFile_add.html";
+    }
+
+    /**
+     * 编辑页面
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/edit")
+    public String edit() {
+        return PREFIX + "/cityFile_edit.html";
+    }
+
+    /**
+     * 新增接口
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/addItem")
+    @ResponseBody
+    public ResponseData addItem(String filepath) throws ParseException {
+        String filename = filepath.substring(filepath.lastIndexOf("/") +1);
+        CityFileParam cityFileParam = new CityFileParam();
+        cityFileParam.setFilename(filename);
+        cityFileParam.setFilepath(filepath);
+        cityFileParam.setFiletype("");
+//        cityFileParam.setCreatetime(new SimpleDateFormat("yyyy-MM-dd ").parse(""));
+
+        this.cityFileService.add(cityFileParam);
+        return ResponseData.success();
+    }
+
+    /**
+     * 编辑接口
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/editItem")
+    @ResponseBody
+    public ResponseData editItem(CityFileParam cityFileParam) {
+        this.cityFileService.update(cityFileParam);
+        return ResponseData.success();
+    }
+
+    /**
+     * 删除接口
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/delete")
+    @ResponseBody
+    public ResponseData delete(CityFileParam cityFileParam) {
+        this.cityFileService.delete(cityFileParam);
+        return ResponseData.success();
+    }
+
+    /**
+     * 查看详情接口
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @RequestMapping("/detail")
+    @ResponseBody
+    public ResponseData detail(CityFileParam cityFileParam) {
+        CityFile detail = this.cityFileService.getById(cityFileParam.getId());
+        return ResponseData.success(detail);
+    }
+
+    /**
+     * 查询列表
+     *
+     * @author lls
+     * @Date 2020-11-13
+     */
+    @ResponseBody
+    @RequestMapping("/list")
+    public ResponseData list(CityFileParam cityFileParam) {
+        LayuiPageInfo layuiPageInfo = this.cityFileService.findPageBySpec(cityFileParam);
+        return new SuccessResponseData(layuiPageInfo.getData());
+    }
+    @ResponseBody
+    @RequestMapping("/listLong")
+    public ResponseData listCopy(CityFileParam cityFileParam) {
+        LayuiPageInfo layuiPageInfo = this.cityFileService.findPageBySpecCopy(cityFileParam);
+        return new SuccessResponseData(layuiPageInfo.getData());
+    }
+
+    /**
+     * 查询列表
+     *
+     * @author lls
+     * @Date 2020-11-17
+     */
+    @ResponseBody
+    @RequestMapping("/listForSys")
+    public LayuiPageInfo listForSys(CityFileParam cityFileParam) {
+        return this.cityFileService.findPageBySpec(cityFileParam);
+    }
+
+
+    /**
+     * 获取通知列表
+     *
+     * @author fengshuonan
+     * @Date 2018/12/23 6:06 PM
+     */
+    @ResponseBody
+    @RequestMapping(value = "/noticeList")
+    public ResponseData list(String condition) {
+        Page<Map<String, Object>> list = this.restNoticeService.list(condition);
+        Page<Map<String, Object>> wrap = new NoticeWrapper(list).wrap();
+//        return LayuiPageFactory.createPageInfo(wrap);
+        return new SuccessResponseData(LayuiPageFactory.createPageInfo(wrap).getData());
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/findByNoticeId" , method = RequestMethod.POST,  produces = "application/json; charset=utf-8")
+    public ResponseData findByNoticeId(@RequestParam(value = "noticeId")String noticeId){
+        Map<String,Object> notice = this.restNoticeService.findByNoticeId(noticeId);
+        return new SuccessResponseData(notice);
+    }
+
+    @ResponseBody
+    @RequestMapping("/downloadFile")
+    public ResponseData downloadFile(HttpServletResponse response, String id) throws Exception {
+
+        String filepath = this.cityFileService.findById(id).getFilepath();
+        String filename = "test.jpg";
+        FileDownload.fileDownload(response,filepath,filename);
+        return new SuccessResponseData();
+    }
+
+}
+
+

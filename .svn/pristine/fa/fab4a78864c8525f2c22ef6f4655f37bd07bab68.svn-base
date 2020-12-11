@@ -1,0 +1,357 @@
+package cn.stylefeng.guns.modular.hhsys.entity;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
+import java.util.Date;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
+
+/**
+ * <p>
+ * 点位信息
+ * </p>
+ *
+ * @author lls
+ * @since 2020-11-20
+ */
+@TableName("dc_point_info")
+public class PointInfo implements Serializable {
+
+    private static final long serialVersionUID=1L;
+
+      @TableId(value = "OBJECTID", type = IdType.ID_WORKER)
+    private String objectid;
+
+    /**
+     * 备注
+     */
+    @TableField("bz")
+    private String bz;
+
+    /**
+     * 序号
+     */
+    @TableField("xh")
+    private String xh;
+
+    /**
+     * 河道名称
+     */
+    @TableField("HDMC")
+    private String hdmc;
+
+    /**
+     * 投影长度
+     */
+    @TableField("Shape_Leng")
+    private String shapeLeng;
+
+    /**
+     * 投影面积
+     */
+    @TableField("Shape_Area")
+    private String shapeArea;
+
+    /**
+     * 编号
+     */
+    @TableField("Id")
+    private String Id;
+
+    /**
+     * 横坐标
+     */
+    @TableField("HZB")
+    private String hzb;
+
+    /**
+     * 纵坐标
+     */
+    @TableField("ZZB")
+    private String zzb;
+
+    @TableField("JSZT")
+    private String jszt;
+
+    @TableField("JSNR")
+    private String jsnr;
+
+    @TableField("JSSJ")
+    private String jssj;
+
+    @TableField("YXZT")
+    private String yxzt;
+
+    /**
+     * 序号1
+     */
+    @TableField("XH_1")
+    private String xh1;
+
+    /**
+     * 面积
+     */
+    @TableField("area")
+    private String area;
+
+    @TableField("SJDQ")
+    private String sjdq;
+
+    /**
+     * 备注1
+     */
+    @TableField("BZ_1")
+    private String bz1;
+
+    /**
+     * 创建时间
+     */
+      @TableField(value = "create_time", fill = FieldFill.INSERT)
+    private Date createTime;
+
+    /**
+     * 修改时间
+     */
+      @TableField(value = "update_time", fill = FieldFill.UPDATE)
+    private Date updateTime;
+
+    /**
+     * 创建人
+     */
+      @TableField(value = "create_user", fill = FieldFill.INSERT)
+    private Long createUser;
+
+    /**
+     * 修改人
+     */
+      @TableField(value = "update_user", fill = FieldFill.UPDATE)
+    private Long updateUser;
+
+    /**
+     * 版本（乐观锁保留字段）
+     */
+    @TableField("version")
+    private Integer version;
+
+    /**
+     * 是否删除(逻辑删除)
+     */
+    @TableField("deleted")
+    private Boolean deleted;
+
+
+    public String getObjectid() {
+        return objectid;
+    }
+
+    public void setObjectid(String objectid) {
+        this.objectid = objectid;
+    }
+
+    public String getBz() {
+        return bz;
+    }
+
+    public void setBz(String bz) {
+        this.bz = bz;
+    }
+
+    public String getXh() {
+        return xh;
+    }
+
+    public void setXh(String xh) {
+        this.xh = xh;
+    }
+
+    public String getHdmc() {
+        return hdmc;
+    }
+
+    public void setHdmc(String hdmc) {
+        this.hdmc = hdmc;
+    }
+
+    public String getShapeLeng() {
+        return shapeLeng;
+    }
+
+    public void setShapeLeng(String shapeLeng) {
+        this.shapeLeng = shapeLeng;
+    }
+
+    public String getShapeArea() {
+        return shapeArea;
+    }
+
+    public void setShapeArea(String shapeArea) {
+        this.shapeArea = shapeArea;
+    }
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String Id) {
+        this.Id = Id;
+    }
+
+    public String getHzb() {
+        return hzb;
+    }
+
+    public void setHzb(String hzb) {
+        this.hzb = hzb;
+    }
+
+    public String getZzb() {
+        return zzb;
+    }
+
+    public void setZzb(String zzb) {
+        this.zzb = zzb;
+    }
+
+    public String getJszt() {
+        return jszt;
+    }
+
+    public void setJszt(String jszt) {
+        this.jszt = jszt;
+    }
+
+    public String getJsnr() {
+        return jsnr;
+    }
+
+    public void setJsnr(String jsnr) {
+        this.jsnr = jsnr;
+    }
+
+    public String getJssj() {
+        return jssj;
+    }
+
+    public void setJssj(String jssj) {
+        this.jssj = jssj;
+    }
+
+    public String getYxzt() {
+        return yxzt;
+    }
+
+    public void setYxzt(String yxzt) {
+        this.yxzt = yxzt;
+    }
+
+    public String getXh1() {
+        return xh1;
+    }
+
+    public void setXh1(String xh1) {
+        this.xh1 = xh1;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getSjdq() {
+        return sjdq;
+    }
+
+    public void setSjdq(String sjdq) {
+        this.sjdq = sjdq;
+    }
+
+    public String getBz1() {
+        return bz1;
+    }
+
+    public void setBz1(String bz1) {
+        this.bz1 = bz1;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Long getCreateUser() {
+        return createUser;
+    }
+
+    public void setCreateUser(Long createUser) {
+        this.createUser = createUser;
+    }
+
+    public Long getUpdateUser() {
+        return updateUser;
+    }
+
+    public void setUpdateUser(Long updateUser) {
+        this.updateUser = updateUser;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+
+    @Override
+    public String toString() {
+        return "PointInfo{" +
+        "objectid=" + objectid +
+        ", bz=" + bz +
+        ", xh=" + xh +
+        ", hdmc=" + hdmc +
+        ", shapeLeng=" + shapeLeng +
+        ", shapeArea=" + shapeArea +
+        ", Id=" + Id +
+        ", hzb=" + hzb +
+        ", zzb=" + zzb +
+        ", jszt=" + jszt +
+        ", jsnr=" + jsnr +
+        ", jssj=" + jssj +
+        ", yxzt=" + yxzt +
+        ", xh1=" + xh1 +
+        ", area=" + area +
+        ", sjdq=" + sjdq +
+        ", bz1=" + bz1 +
+        ", createTime=" + createTime +
+        ", updateTime=" + updateTime +
+        ", createUser=" + createUser +
+        ", updateUser=" + updateUser +
+        ", version=" + version +
+        ", deleted=" + deleted +
+        "}";
+    }
+}

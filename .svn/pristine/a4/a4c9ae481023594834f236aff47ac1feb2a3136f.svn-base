@@ -1,0 +1,289 @@
+package cn.stylefeng.guns.modular.hhsys.proxy;
+
+//import com.mapjs.hydroplat.model.metadata.Iface;
+//import com.mapjs.hydroplat.model.metadata.Resource;
+//import com.mapjs.hydroplat.service.ResourceService;
+
+import cn.stylefeng.guns.modular.hhsys.entity.CityResource;
+import cn.stylefeng.guns.modular.hhsys.entity.ServiceInfo;
+import cn.stylefeng.guns.modular.hhsys.entity.ServiceMatedata;
+import cn.stylefeng.guns.modular.hhsys.entity.Token;
+import cn.stylefeng.guns.modular.hhsys.service.ResourceService;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.Cache;
+import org.springframework.cache.ehcache.EhCacheCacheManager;
+import org.springframework.context.MessageSource;
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.UrlPathHelper;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+/**
+ * . service proxy
+ * .
+ * . services/{id}/{server}/{type}/../..?paramString
+ * . id     资源id
+ * . server 代理类型 arcgis 、 ogc
+ * . type   资源访问类型 serviceType
+ *
+ * @author <a href="mailto:lanxy88@gmail.com">NelsonXu</a>
+ * @version V1.0, 2014/8/21 19:35
+ */
+//@Configuration
+public class ServiceHandlerInterceptor implements HandlerInterceptor, ServiceInterceptor {
+
+    private static String ARCGIS = "arcgis";
+    private static String OGC = "ogc";
+
+    private static String SERVICE = "services";
+
+    private static String MAP_SERVER = "MapServer";
+
+    private static String REPORTMIS = "JSGC";
+
+    @Autowired
+    private MessageSource message;
+
+    @Autowired
+    private ResourceService resourceService;
+
+//    @Autowired
+//    private ResourceService resourceService;
+
+    @Autowired
+    private EhCacheCacheManager cacheManager;
+
+    private static String SERVICE_HANDLER = "services";
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+
+    private UrlPathHelper urlPathHelper = new UrlPathHelper();
+
+    private Map<String, ServiceHandler> handlers = new ConcurrentHashMap<>();
+
+
+    /**
+     *
+     * @param request  current HTTP request
+     * @param response current HTTP response
+     * @param handler  chosen handler to execute, for type and/or instance evaluation
+     * @return {@code true} if the execution chain should proceed with the
+     * next interceptor or the handler itself. Else, DispatcherServlet assumes
+     * that this interceptor has already dealt with the response itself.
+     * @throws Exception in case of errors
+     */
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        String uri = urlPathHelper.getRequestUri(request).substring(urlPathHelper.getContextPath(request).length() + SERVICE_HANDLER.length() + 2);
+        System.out.println("uri--------------------------------->"+uri);
+
+        String url = request.getRequestURI();
+        System.out.println("url----------------------->"+url);
+        String queryStr = request.getQueryString();
+        System.out.println("queryStr----------------------->"+queryStr);
+        boolean canAccess = false;
+        if(queryStr==null|| queryStr.isEmpty()||!queryStr.contains("tokenCode")) {
+            //没有token不给访问
+            canAccess = false;
+        }else {
+            //若是超级token这随便访问，否则根据token查询出资源ID，如果和uri匹配就可以访问，否则不允许
+            String[] params = queryStr.split("&");
+            for(String param : params) {
+                if (param.contains("tokenCode")) {
+                    String token = param.split("=")[1];
+                    if (token.equals("c7b175add7a64048b65455f34ccb3df0")) {
+                        canAccess = true;
+                    } else {
+                        List<Token> tokenInfoList = resourceService.getTokenInfo(token);
+                        for (Token tokenInfo : tokenInfoList) {
+                            String rescourceId = tokenInfo.getResourceid();
+                            if (uri.contains(rescourceId)) {
+                                canAccess = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (canAccess) {
+            String[] paths = uri.split("/");
+            if (paths.length < 3) throw new RuntimeException(getMessage("proxy.uri.error", uri));
+            String type = paths[1];
+            ServiceHandler serviceHandler = handlers.get(type);
+            if (serviceHandler != null) {
+                try {
+                    handleService(serviceHandler, paths, request, response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getLocalizedMessage());
+                }
+            }
+        }else {
+            // 没有Token，不能访问
+            JSONObject json = new JSONObject();
+            json.put("result","false");
+            json.put("message","缺少token或者token错误！");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json.toJSONString());
+        }
+
+
+        return false;
+    }
+
+    /**
+     * handle service
+     *
+     * @param handle
+     * @param paths
+     * @param request
+     * @param response
+     */
+    @Override
+    public void handleService(ServiceHandler handle, String[] paths, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        ServiceType type = ServiceType.value(paths[2]);
+        String url = getOriginalUrl(paths[0], type);
+        System.out.println("original url----------->"+url);
+        handle.handler(type, paths, url, request, response);
+    }
+
+    /**
+     * @param root
+     * @param originalUrl
+     * @return
+     */
+    public final String toProxyUrl(String root, String resourceId, String originalUrl) {
+        String[] paths = originalUrl.split("/");
+        String server;
+        ServiceType type = ServiceType.rest;
+        if (ArrayUtils.contains(paths, SERVICE) && ArrayUtils.contains(paths, MAP_SERVER)) {
+            server = ARCGIS;
+            if (ArrayUtils.contains(paths, "WMTS")) type = ServiceType.wmts;
+            else if (ArrayUtils.contains(paths, "WMSServer")) type = ServiceType.wms;
+            else if (ArrayUtils.contains(paths, "WFSServer")) type = ServiceType.wfs;
+            else if (ArrayUtils.contains(paths, "WCSServer")) type = ServiceType.wcs;
+            else if (ArrayUtils.contains(paths, "rest")) type = ServiceType.rest;
+        } else if (ArrayUtils.contains(paths, SERVICE) && ArrayUtils.contains(paths, "FeatureServer")) {
+            server = ARCGIS;
+            type = ServiceType.feature;
+        } else if (ArrayUtils.contains(paths, SERVICE) && ArrayUtils.contains(paths, "WPSServer")) {
+            server = ARCGIS;
+            type = ServiceType.wps;
+        } else if (ArrayUtils.contains(paths, REPORTMIS)) {//数据集服务
+            server = REPORTMIS;
+            type = ServiceType.data_service;
+        } else if (ArrayUtils.contains(paths, "vrsr")) {//报表
+            server = REPORTMIS;
+            type = ServiceType.report_form;
+        } else {
+            server = OGC;
+            if (ArrayUtils.contains(paths, "wms")) type = ServiceType.wms;
+            else if (ArrayUtils.contains(paths, "wmts")) type = ServiceType.wmts;
+            else if (StringUtils.contains(originalUrl, "ows") && StringUtils.contains(originalUrl, "wfs")) {
+                type = ServiceType.wfs;
+            } else if (StringUtils.contains(originalUrl, "ows") && StringUtils.contains(originalUrl, "wps")) {
+                type = ServiceType.wps;
+            }
+        }
+        String[] p = new String[]{root, SERVICE, resourceId, server, type.name()};
+        return "/".concat(StringUtils.join(p, "/"));
+    }
+
+    /**
+     * Intercept the execution of a handler. Called after HandlerAdapter actually
+     * invoked the handler, but before the DispatcherServlet renders the view.
+     * Can expose additional model objects to the view via the given ModelAndView.
+     * <p>DispatcherServlet processes a handler in an execution chain, consisting
+     * of any number of interceptors, with the handler itself at the end.
+     * With this method, each interceptor can post-process an execution,
+     * getting applied in inverse order of the execution chain.
+     *
+     * @param request      current HTTP request
+     * @param response     current HTTP response
+     * @param handler      handler (or {@link  }) that started async
+     *                     execution, for type and/or instance examination
+     * @param modelAndView the {@code ModelAndView} that the handler returned
+     *                     (can also be {@code null})
+     * @throws Exception in case of errors
+     */
+    @Override
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+
+    }
+
+    /**
+     * Callback after completion of request processing, that is, after rendering
+     * the view. Will be called on any outcome of handler execution, thus allows
+     * for proper resource cleanup.
+     * <p>Note: Will only be called if this interceptor's {@code preHandle}
+     * method has successfully completed and returned {@code true}!
+     * <p>As with the {@code postHandle} method, the method will be invoked on each
+     * interceptor in the chain in reverse order, so the first interceptor will be
+     * the last to be invoked.
+     *
+     * @param request  current HTTP request
+     * @param response current HTTP response
+     * @param handler  handler (or {@link  }) that started async
+     *                 execution, for type and/or instance examination
+     * @param ex       exception thrown on handler execution, if any
+     * @throws Exception in case of errors
+     */
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+
+    }
+
+    /**
+     * get original url
+     *
+     * @param resourceId
+     * @param type
+     * @return
+     */
+    private String getOriginalUrl(String resourceId, ServiceType type) {
+        //
+        Cache cache = cacheManager.getCache("proxyCache");
+        String key = resourceId + type.name();
+        String url = (  String) (cache.get(key) != null ? cache.get(key).get() : null);
+        if (StringUtils.isNotBlank(url)) return url;
+        //
+        ServiceInfo serviceInfo = resourceService.getServiceInfo(resourceId);
+        CityResource resource = serviceInfo.getResource();
+        ServiceMatedata serviceMetaData = serviceInfo.getServiceMetaData();
+        if (serviceMetaData == null) throw new RuntimeException(getMessage("res.not.found", resourceId));
+        String serviceUrl = serviceMetaData.getRawUrl();
+        cache.put(key, serviceUrl);
+        return serviceUrl;
+
+    }
+
+    /**
+     * @param handlers
+     */
+    public void setHandlers(Map<String, ServiceHandler> handlers) {
+        this.handlers = handlers;
+    }
+
+    /**
+     * @param key
+     * @param param
+     * @return
+     */
+    protected String getMessage(String key, Object... param) {
+        return message.getMessage(key, param, Locale.getDefault());
+    }
+
+}

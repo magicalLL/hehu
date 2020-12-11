@@ -1,0 +1,110 @@
+package cn.stylefeng.guns.modular.hhsys.service.impl;
+
+import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
+import cn.stylefeng.guns.base.pojo.page.LayuiPageInfo;
+import cn.stylefeng.guns.modular.hhsys.entity.ServiceMatedata;
+import cn.stylefeng.guns.modular.hhsys.mapper.ServiceMatedataMapper;
+import cn.stylefeng.guns.modular.hhsys.model.params.ServiceMatedataParam;
+import cn.stylefeng.guns.modular.hhsys.model.result.ServiceMatedataResult;
+import cn.stylefeng.guns.modular.hhsys.service.ServiceMatedataService;
+import cn.stylefeng.roses.core.util.ToolUtil;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.UUID;
+
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author lls
+ * @since 2020-10-27
+ */
+@Service
+public class ServiceMatedataServiceImpl extends ServiceImpl<ServiceMatedataMapper, ServiceMatedata> implements ServiceMatedataService {
+
+    @Autowired
+    private ServiceMatedataMapper serviceMatedataMapper;
+
+    public List<ServiceMatedataResult> findServicesList(){
+        return serviceMatedataMapper.customList();
+    }
+
+    @Override
+    public void add(ServiceMatedataParam param){
+        ServiceMatedata entity = getEntity(param);
+        this.save(entity);
+    }
+
+    @Override
+    public void add(ServiceMatedata serviceMatedata){
+        String publishUrl = "/services/" + serviceMatedata.getResourceid() + "/arcgis/rest";
+        serviceMatedata.setId(UUID.randomUUID().toString().replaceAll("-",""));
+        serviceMatedata.setPublishUrl(publishUrl);
+        try {
+            this.save(serviceMatedata);
+        }catch (Exception e){
+
+        }
+    }
+
+    @Override
+    public void delete(ServiceMatedataParam param){
+        this.removeById(getKey(param));
+    }
+
+    @Override
+    public void update(ServiceMatedataParam param){
+        ServiceMatedata oldEntity = getOldEntity(param);
+        ServiceMatedata newEntity = getEntity(param);
+        ToolUtil.copyProperties(newEntity, oldEntity);
+        this.updateById(newEntity);
+    }
+
+    @Override
+    public ServiceMatedataResult findBySpec(ServiceMatedataParam param){
+        return null;
+    }
+
+    @Override
+    public ServiceMatedataResult findByResourceId(String resourceid){
+        return this.serviceMatedataMapper.findByResourceId(resourceid);
+    }
+
+    @Override
+    public List<ServiceMatedataResult> findListBySpec(ServiceMatedataParam param){
+        return null;
+    }
+
+    @Override
+    public LayuiPageInfo findPageBySpec(ServiceMatedataParam param){
+        Page pageContext = getPageContext();
+        IPage page = this.baseMapper.customPageList(pageContext, param);
+        return LayuiPageFactory.createPageInfo(page);
+    }
+
+    private Serializable getKey(ServiceMatedataParam param){
+        return param.getId();
+    }
+
+    private Page getPageContext() {
+        return LayuiPageFactory.defaultPage();
+    }
+
+    private ServiceMatedata getOldEntity(ServiceMatedataParam param) {
+        return this.getById(getKey(param));
+    }
+
+    private ServiceMatedata getEntity(ServiceMatedataParam param) {
+        ServiceMatedata entity = new ServiceMatedata();
+        ToolUtil.copyProperties(param, entity);
+        return entity;
+    }
+
+}

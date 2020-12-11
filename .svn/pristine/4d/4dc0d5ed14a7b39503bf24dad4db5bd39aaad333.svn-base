@@ -1,0 +1,141 @@
+package cn.stylefeng.guns.modular.hhsys.proxy;
+
+//import com.mapjs.hydroplat.model.metadata.Iface;
+//import com.mapjs.hydroplat.model.metadata.Resource;
+//import com.mapjs.hydroplat.service.ResourceService;
+
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * . service proxy
+ * .
+ * . services/{id}/{server}/{type}/../..?paramString
+ * . id     资源id
+ * . server 代理类型 arcgis 、 ogc
+ * . type   资源访问类型 serviceType
+ *
+ * @author <a href="mailto:lanxy88@gmail.com">NelsonXu</a>
+ * @version V1.0, 2014/8/21 19:35
+ */
+//@Component
+public class ServiceHandlerInterceptor implements HandlerInterceptor{
+
+
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println("========================================>>>");
+        return false;
+    }
+
+    /**
+     * handle service
+     *
+     * @param handle
+     * @param paths
+     * @param request
+     * @param response
+     */
+//    @Override
+//    public void handleService(ServiceHandler handle, String[] paths, HttpServletRequest request, HttpServletResponse response) throws Exception {
+//        ServiceType type = ServiceType.value(paths[2]);
+//        String url = getOriginalUrl(paths[0], type);
+//        System.out.println("original url----------->"+url);
+//        handle.handler(type, paths, url, request, response);
+//    }
+
+
+//    public final String toProxyUrl(String root, String resourceId, String originalUrl) {
+//        String[] paths = originalUrl.split("/");
+//        String server;
+//        ServiceType type = ServiceType.rest;
+//        if (ArrayUtils.contains(paths, SERVICE) && ArrayUtils.contains(paths, MAP_SERVER)) {
+//            server = ARCGIS;
+//            if (ArrayUtils.contains(paths, "WMTS")) type = ServiceType.wmts;
+//            else if (ArrayUtils.contains(paths, "WMSServer")) type = ServiceType.wms;
+//            else if (ArrayUtils.contains(paths, "WFSServer")) type = ServiceType.wfs;
+//            else if (ArrayUtils.contains(paths, "WCSServer")) type = ServiceType.wcs;
+//            else if (ArrayUtils.contains(paths, "rest")) type = ServiceType.rest;
+//        } else if (ArrayUtils.contains(paths, SERVICE) && ArrayUtils.contains(paths, "FeatureServer")) {
+//            server = ARCGIS;
+//            type = ServiceType.feature;
+//        } else if (ArrayUtils.contains(paths, SERVICE) && ArrayUtils.contains(paths, "WPSServer")) {
+//            server = ARCGIS;
+//            type = ServiceType.wps;
+//        } else if (ArrayUtils.contains(paths, REPORTMIS)) {//数据集服务
+//            server = REPORTMIS;
+//            type = ServiceType.data_service;
+//        } else if (ArrayUtils.contains(paths, "vrsr")) {//报表
+//            server = REPORTMIS;
+//            type = ServiceType.report_form;
+//        } else {
+//            server = OGC;
+//            if (ArrayUtils.contains(paths, "wms")) type = ServiceType.wms;
+//            else if (ArrayUtils.contains(paths, "wmts")) type = ServiceType.wmts;
+//            else if (StringUtils.contains(originalUrl, "ows") && StringUtils.contains(originalUrl, "wfs")) {
+//                type = ServiceType.wfs;
+//            } else if (StringUtils.contains(originalUrl, "ows") && StringUtils.contains(originalUrl, "wps")) {
+//                type = ServiceType.wps;
+//            }
+//        }
+//        String[] p = new String[]{root, SERVICE, resourceId, server, type.name()};
+//        return "/".concat(StringUtils.join(p, "/"));
+//    }
+
+
+    @Override
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+
+    }
+
+
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+
+    }
+
+    /**
+     * get original url
+     *
+     * @param resourceId
+     * @param type
+     * @return
+     */
+//    private String getOriginalUrl(String resourceId, ServiceType type) {
+//        //
+//        Cache cache = cacheManager.getCache("proxyCache");
+//        String key = resourceId + type.name();
+//        String url = (  String) (cache.get(key) != null ? cache.get(key).get() : null);
+//        if (StringUtils.isNotBlank(url)) return url;
+//        //
+//        ServiceInfo serviceInfo = resourceService.getServiceInfo(resourceId);
+//        CityResource resource = serviceInfo.getResource();
+//        ServiceMatedata serviceMetaData = serviceInfo.getServiceMetaData();
+//        if (serviceMetaData == null) throw new RuntimeException(getMessage("res.not.found", resourceId));
+//        String serviceUrl = serviceMetaData.getRawUrl();
+//        cache.put(key, serviceUrl);
+//        return serviceUrl;
+//
+//    }
+
+    /**
+     * @param handlers
+     */
+//    public void setHandlers(Map<String, ServiceHandler> handlers) {
+//        this.handlers = handlers;
+//    }
+
+    /**
+     * @param key
+     * @param param
+     * @return
+     */
+//    protected String getMessage(String key, Object... param) {
+//        return message.getMessage(key, param, Locale.getDefault());
+//    }
+
+}

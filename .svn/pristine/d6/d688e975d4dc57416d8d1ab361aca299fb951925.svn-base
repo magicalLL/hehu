@@ -1,0 +1,23 @@
+package cn.stylefeng.guns.modular.hhsys.proxy;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * .
+ *
+ * @author <a href="mailto:lanxy88@gmail.com">NelsonXu</a>
+ * @version V1.0, 2014/8/29 14:27
+ */
+public interface ServiceProcessor {
+
+    /**
+     * service process
+     *
+     * @param url
+     * @param request
+     * @param response
+     */
+    void process(String url, HttpServletRequest request, HttpServletResponse response) throws Exception;
+
+}

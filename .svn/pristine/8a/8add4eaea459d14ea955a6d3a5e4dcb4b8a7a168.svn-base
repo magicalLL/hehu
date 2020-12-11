@@ -1,0 +1,94 @@
+package cn.stylefeng.guns.modular.hhsys.proxy;
+
+
+import org.apache.commons.httpclient.HttpMethod;
+import org.apache.commons.io.IOUtils;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+/**
+ * .
+ *
+ * @author <a href="mailto:lanxy88@gmail.com">NelsonXu</a>
+ * @version V1.0, 2014/8/29 14:30
+ */
+public class AGSRestProcessor extends AbstractServiceProcessor {
+
+    private static String AGS_PROXY = "/";
+
+    /**
+     * set default
+     *
+     * @param method
+     * @param request
+     */
+    @Override
+    protected void setMethodParams(HttpMethod method, HttpServletRequest request) {
+        super.setMethodParams(method, request);
+        method.getParams().setContentCharset(DEFAULT_ENCODING);
+        method.getParams().setUriCharset(DEFAULT_ENCODING);
+    }
+
+    /**
+     * 重写用来实现不同返回过程处理
+     *
+     * @param content
+     * @param charSet
+     * @return
+     */
+    @Override
+    protected byte[] processContent(byte[] content, String charSet, String url, String proxyUrl) {
+        try {
+            if (content == null) return "".getBytes(charSet);
+            if (url.contains("/tile/") || url.contains("f=json") || url.contains("export")) return content;
+            String value = IOUtils.toString(content, charSet);
+            return rewriteContent(value, url, proxyUrl).getBytes(charSet);
+        } catch (IOException e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    /**
+     * service process
+     *
+     * @param url
+     * @param request
+     * @param response
+     */
+    @Override
+    public void process(String url, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        super.process(url, request, response);
+    }
+
+    /**
+     * rewrite content
+     *
+     * @param content
+     * @param url
+     * @return
+     */
+    private String rewriteContent(String content, String url, String proxyUrl) {
+        content = replaceLink(content, url, proxyUrl);
+
+        // do some replace
+
+        return content;
+
+    }
+
+
+    /**
+     * replace link
+     *
+     * @param content
+     * @param path
+     * @return
+     */
+    private String replaceLink(String content, String path, String proxyUrl) {
+        if (path.endsWith("/")) path = path.substring(0, path.length() - 1);
+        content = content.replaceAll("(?i)" + path, proxyUrl);
+        return content;
+    }
+}

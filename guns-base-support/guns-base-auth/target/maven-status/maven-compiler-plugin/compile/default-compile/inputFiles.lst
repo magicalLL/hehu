@@ -1,0 +1,12 @@
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\exception\PermissionException.java
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\aop\PermissionAop.java
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\context\LoginContext.java
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\exception\AuthException.java
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\jwt\payload\JwtPayLoad.java
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\annotion\Permission.java
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\model\LoginUser.java
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\jwt\JwtTokenUtil.java
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\model\MyRole.java
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\exception\enums\AuthExceptionEnum.java
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\context\LoginContextHolder.java
+E:\svn\data\server-master\guns-base-support\guns-base-auth\src\main\java\cn\stylefeng\guns\base\auth\service\AuthService.java

@@ -1,0 +1,125 @@
+package cn.stylefeng.guns.modular.hhsys.model.params;
+
+import lombok.Data;
+import cn.stylefeng.roses.kernel.model.validator.BaseValidatingParam;
+import java.util.Date;
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+/**
+ * <p>
+ * 点位信息
+ * </p>
+ *
+ * @author lls
+ * @since 2020-11-20
+ */
+@Data
+public class PointInfoParam implements Serializable, BaseValidatingParam {
+
+    private static final long serialVersionUID = 1L;
+
+
+    private String objectid;
+
+    /**
+     * 备注
+     */
+    private String bz;
+
+    /**
+     * 序号
+     */
+    private String xh;
+
+    /**
+     * 河道名称
+     */
+    private String hdmc;
+
+    /**
+     * 投影长度
+     */
+    private String shapeLeng;
+
+    /**
+     * 投影面积
+     */
+    private String shapeArea;
+
+    /**
+     * 编号
+     */
+    private String Id;
+
+    /**
+     * 横坐标
+     */
+    private String hzb;
+
+    /**
+     * 纵坐标
+     */
+    private String zzb;
+
+    private String jszt;
+
+    private String jsnr;
+
+    private String jssj;
+
+    private String yxzt;
+
+    /**
+     * 序号1
+     */
+    private String xh1;
+
+    /**
+     * 面积
+     */
+    private String area;
+
+    private String sjdq;
+
+    /**
+     * 备注1
+     */
+    private String bz1;
+
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+
+    /**
+     * 修改时间
+     */
+    private Date updateTime;
+
+    /**
+     * 创建人
+     */
+    private Long createUser;
+
+    /**
+     * 修改人
+     */
+    private Long updateUser;
+
+    /**
+     * 版本（乐观锁保留字段）
+     */
+    private Integer version;
+
+    /**
+     * 是否删除(逻辑删除)
+     */
+    private Boolean deleted;
+
+    @Override
+    public String checkParam() {
+        return null;
+    }
+
+}

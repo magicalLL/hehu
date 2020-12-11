@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.hhsys.mapper.PointInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.hhsys.entity.PointInfo">
+        <id column="objectid" property="objectid" />
+        <result column="fid" property="fid" />
+        <result column="hdmc" property="hdmc" />
+        <result column="shape" property="shape" />
+        <result column="Id" property="Id" />
+        <result column="mj" property="mj" />
+        <result column="mj2" property="mj2" />
+        <result column="xh" property="xh" />
+        <result column="hzb" property="hzb" />
+        <result column="zzb" property="zzb" />
+        <result column="sjdq" property="sjdq" />
+        <result column="xmwz" property="xmwz" />
+        <result column="bhlx" property="bhlx" />
+        <result column="bhdgk" property="bhdgk" />
+        <result column="xmmc" property="xmmc" />
+        <result column="jszt" property="jszt" />
+        <result column="sbsj" property="sbsj" />
+        <result column="runstate" property="runState" />
+        <result column="jggc" property="jggc" />
+        <result column="bz" property="bz" />
+        <result column="Shape_Leng" property="shapeLeng" />
+        <result column="Shape_Area" property="shapeArea" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="shsj" property="shsj" />
+        <result column="sbr" property="sbr" />
+        <result column="shr" property="shr" />
+        <result column="version" property="version" />
+        <result column="deleted" property="deleted" />
+        <result column="sbyy" property="sbyy" />
+        <result column="shyy" property="shyy" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        objectid AS "objectid", fid AS "fid", hdmc AS "hdmc", shape AS "shape", Id AS "Id", mj AS "mj", mj2 AS "mj2", xh AS "xh", hzb AS "hzb", zzb AS "zzb", sjdq AS "sjdq", xmwz AS "xmwz", bhlx AS "bhlx", bhdgk AS "bhdgk", xmmc AS "xmmc", jszt AS "jszt", sbsj AS "sbsj", runstate AS "runState", jggc AS "jggc", bz AS "bz", Shape_Leng AS "shapeLeng", Shape_Area AS "shapeArea", status AS "status", create_time AS "createTime", shsj AS "shsj", sbr AS "sbr", shr AS "shr", version AS "version", deleted AS "deleted", sbyy AS "sbyy", shyy AS "shyy"
+    </sql>
+
+    <insert id="addPoint" parameterType="map">
+        INSERT INTO dc_point_info(objectId,fid,URL,STATUS,DESCRIPTION,SBSJ,SBR,createbody,createtime,runstate,jggc,bz) VALUES
+      (#{ID,jdbcType=VARCHAR},
+       #{TBID,jdbcType=VARCHAR},
+       #{URL,jdbcType=VARCHAR},
+       #{STATUS,jdbcType=VARCHAR},
+       #{DESCRIPTION,jdbcType=VARCHAR},
+       #{SBSJ,jdbcType=TIMESTAMP},
+       #{SBR,jdbcType=VARCHAR},
+       #{createbody,jdbcType=VARCHAR},
+       #{createtime,jdbcType=TIMESTAMP},
+       #{runstate,jdbcType=VARCHAR},
+       #{jggc,jdbcType=VARCHAR},
+       #{bz,jdbcType=VARCHAR})
+    </insert>
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.PointInfoResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.PointInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_point_info where 1 = 1
+            <if test="paramCondition.hdmc != null and paramCondition.hdmc != ''">
+                and hdmc like CONCAT('%',#{paramCondition.hdmc},'%')
+            </if>
+            <if test="paramCondition.xmmc != null and paramCondition.xmmc != ''">
+                and xmmc like CONCAT('%',#{paramCondition.xmmc},'%')
+            </if>
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.PointInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_point_info where 1 = 1
+            <if test="paramCondition.hdmc != null and paramCondition.hdmc != ''">
+                and hdmc like CONCAT('%',#{paramCondition.hdmc},'%')
+            </if>
+            <if test="paramCondition.xmmc != null and paramCondition.xmmc != ''">
+                and xmmc like CONCAT('%',#{paramCondition.xmmc},'%')
+            </if>
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.PointInfoResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.PointInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_point_info where 1 = 1
+            <if test="paramCondition.hdmc != null and paramCondition.hdmc != ''">
+                and hdmc like CONCAT('%',#{paramCondition.hdmc},'%')
+            </if>
+            <if test="paramCondition.xmmc != null and paramCondition.xmmc != ''">
+                and xmmc like CONCAT('%',#{paramCondition.xmmc},'%')
+            </if>
+    </select>
+
+    <select id="customPageListByDept" resultType="cn.stylefeng.guns.modular.hhsys.model.result.PointInfoResult" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_point_info where sjdq = #{dept}
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.PointInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_point_info where 1 = 1
+            <if test="paramCondition.hdmc != null and paramCondition.hdmc != ''">
+                and hdmc like CONCAT('%',#{paramCondition.hdmc},'%')
+            </if>
+            <if test="paramCondition.xmmc != null and paramCondition.xmmc != ''">
+                and xmmc like CONCAT('%',#{paramCondition.xmmc},'%')
+            </if>
+    </select>
+
+</mapper>

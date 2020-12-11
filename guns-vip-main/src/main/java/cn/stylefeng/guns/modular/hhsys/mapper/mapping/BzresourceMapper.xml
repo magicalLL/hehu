@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.hhsys.mapper.BzresourceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.hhsys.entity.Bzresource">
+        <id column="id" property="id" />
+        <result column="userid" property="userid" />
+        <result column="tablename" property="tablename" />
+        <result column="createtime" property="createtime" />
+        <result column="tablealias" property="tablealias" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS "id", userid AS "userid", tablename AS "tablename", createtime AS "createtime", tablealias AS "tablealias"
+    </sql>
+
+    <select id="getDatas" parameterType="Map" resultType="Map">
+        select *
+        from ${tablename}
+        where 1=1
+    </select>
+
+    <insert id="insertBzresource" parameterType="Map">
+        insert into dc_bzresource
+        (
+        <if test="fields.size()>0">
+            <foreach collection="fields" index="index" item="item" open=""
+                     separator=" , " close="">
+                ${item.key}
+            </foreach>
+        </if>
+        )
+        values
+        (
+        <if test="fields.size()>0">
+            <foreach collection="fields" index="index" item="item" open=""
+                     separator=" , " close="">
+                <if test="item.type == 1">
+                    #{item.value}
+                </if>
+                <if test="item.type == 0">
+                    ${item.value}
+                </if>
+            </foreach>
+        </if>
+        )
+    </insert>
+
+    <insert id="addData" parameterType="Map">
+        insert into ${tablename}
+        (
+        <if test="fields.size()>0">
+            <foreach collection="fields" index="index" item="item" open=""
+                     separator=" , " close="">
+                ${item.key}
+            </foreach>
+        </if>
+        )
+        values
+        (
+        <if test="fields.size()>0">
+            <foreach collection="fields" index="index" item="item" open=""
+                     separator=" , " close="">
+                #{item.value}
+            </foreach>
+        </if>
+        )
+    </insert>
+
+    <delete id="deleteData" parameterType="Map">
+        delete from ${tableName} where id = #{id}
+    </delete>
+
+    <delete id="deleteTableData" parameterType="Map">
+        delete from dc_bzresource where id = #{id}
+    </delete>
+
+    <delete id="deleteMarkerTable" parameterType="Map">
+        drop table ${tableName}
+    </delete>
+
+    <update id="createMarkerTable" parameterType="Map">
+        create table ${tableName} (
+        id varchar(50) not null primary key,
+        <if test="fields.size()>0">
+            <foreach collection="fields" index="index" item="item" open=""
+                     separator=" , " close="">
+                ${item.name} ${item.type}
+            </foreach>
+        </if>
+        )
+    </update>
+
+
+    <select id="findByTableName" resultType="cn.stylefeng.guns.modular.hhsys.model.result.BzresourceResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.BzresourceParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_bzresource where tablename=#{tablename}
+    </select>
+
+    <select id="customPageListById" resultType="cn.stylefeng.guns.modular.hhsys.model.result.BzresourceResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.BzresourceParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_bzresource where userid=#{userid}
+    </select>
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.BzresourceResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.BzresourceParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_bzresource where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.BzresourceParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_bzresource where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.BzresourceResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.BzresourceParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_bzresource where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.BzresourceParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_bzresource where 1 = 1
+    </select>
+
+</mapper>

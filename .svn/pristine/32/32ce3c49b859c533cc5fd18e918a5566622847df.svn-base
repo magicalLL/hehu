@@ -1,0 +1,24 @@
+package cn.stylefeng.guns.modular.hhsys.proxy;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * .
+ *
+ * @author <a href="mailto:lanxy88@gmail.com">NelsonXu</a>
+ * @version V1.0, 2014/9/1 11:50
+ */
+public interface ServiceInterceptor {
+
+    /**
+     * handler service
+     *
+     * @param handle
+     * @param paths
+     * @param request
+     * @param response
+     */
+
+    void handleService(ServiceHandler handle, String[] paths, HttpServletRequest request, HttpServletResponse response) throws Exception;
+}

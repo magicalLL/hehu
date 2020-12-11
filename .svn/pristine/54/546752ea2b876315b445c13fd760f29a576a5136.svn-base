@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.hhsys.mapper.PointInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.hhsys.entity.PointInfo">
+        <id column="OBJECTID" property="objectid" />
+        <result column="bz" property="bz" />
+        <result column="xh" property="xh" />
+        <result column="HDMC" property="hdmc" />
+        <result column="Shape_Leng" property="shapeLeng" />
+        <result column="Shape_Area" property="shapeArea" />
+        <result column="Id" property="Id" />
+        <result column="HZB" property="hzb" />
+        <result column="ZZB" property="zzb" />
+        <result column="JSZT" property="jszt" />
+        <result column="JSNR" property="jsnr" />
+        <result column="JSSJ" property="jssj" />
+        <result column="YXZT" property="yxzt" />
+        <result column="XH_1" property="xh1" />
+        <result column="area" property="area" />
+        <result column="SJDQ" property="sjdq" />
+        <result column="BZ_1" property="bz1" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_user" property="createUser" />
+        <result column="update_user" property="updateUser" />
+        <result column="version" property="version" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        OBJECTID AS "objectid", bz AS "bz", xh AS "xh", HDMC AS "hdmc", Shape_Leng AS "shapeLeng", Shape_Area AS "shapeArea", Id AS "Id", HZB AS "hzb", ZZB AS "zzb", JSZT AS "jszt", JSNR AS "jsnr", JSSJ AS "jssj", YXZT AS "yxzt", XH_1 AS "xh1", area AS "area", SJDQ AS "sjdq", BZ_1 AS "bz1", create_time AS "createTime", update_time AS "updateTime", create_user AS "createUser", update_user AS "updateUser", version AS "version", deleted AS "deleted"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.PointInfoResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.PointInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_point_info where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.PointInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_point_info where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.hhsys.model.result.PointInfoResult" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.PointInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_point_info where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.hhsys.model.params.PointInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from dc_point_info where 1 = 1
+    </select>
+
+</mapper>

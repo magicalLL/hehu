@@ -1,0 +1,463 @@
+POST http://localhost:8888/wyhc/getPatchReportList?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA1MjU4NzgxLCJ1c2VySWQiOjEsImlhdCI6MTYwNDY1Mzk4MSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.3tq5YhFlTZo88x4NadJczYjTemKukrJWXQLPCVZJ2-KRn5MBMLrS4sXEudBIPwj3D31ZvBCnOP-T6dXPzwq4nQ
+
+{     "STATUS":"1,2",     "limit":"10",     "page":"1",     "TBID":"44" }
+
+<> 2020-11-06T053141.200.json
+
+###
+
+POST http://localhost:8888/wyhc/getPatchReportList?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA1MjU4NzgxLCJ1c2VySWQiOjEsImlhdCI6MTYwNDY1Mzk4MSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.3tq5YhFlTZo88x4NadJczYjTemKukrJWXQLPCVZJ2-KRn5MBMLrS4sXEudBIPwj3D31ZvBCnOP-T6dXPzwq4nQ
+
+{     "STATUS":"1,2",     "limit":"10",     "page":"1",     "TBID":"" }
+
+<> 2020-11-06T051403.200.json
+
+###
+
+POST http://localhost:8888/wyhc/getPatchReportList?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA1MjU4NzgxLCJ1c2VySWQiOjEsImlhdCI6MTYwNDY1Mzk4MSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.3tq5YhFlTZo88x4NadJczYjTemKukrJWXQLPCVZJ2-KRn5MBMLrS4sXEudBIPwj3D31ZvBCnOP-T6dXPzwq4nQ
+
+{}
+
+<> 2020-11-06T051343.200.json
+
+###
+
+POST http://localhost:8888/rest/login?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA1MjU3NTczLCJ1c2VySWQiOjEsImlhdCI6MTYwNDY1Mjc3MywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.DHyEaa9RcbYLPoiHko8pFEzNfQTGig3ylVaZjgwTqBsiOGX8K884kAnsExIixS9-ZHeXLntoQC_xssDa5quxhw
+
+{"username":"admin","password":"111111"}
+
+<> 2020-11-06T051301.200.json
+
+###
+
+POST http://localhost:8888/rest/convertCoordinate?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA1MjU3NTczLCJ1c2VySWQiOjEsImlhdCI6MTYwNDY1Mjc3MywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.DHyEaa9RcbYLPoiHko8pFEzNfQTGig3ylVaZjgwTqBsiOGX8K884kAnsExIixS9-ZHeXLntoQC_xssDa5quxhw
+
+{"xmin":467816.9290650664,"ymin":3639721.141043303,"xmax":586698.4609349333,"ymax":3738619.7373566967};
+
+<> 2020-11-06T051239.200.json
+
+###
+
+POST http://localhost:8888/rest/convertCoordinate?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA1MjU3NTczLCJ1c2VySWQiOjEsImlhdCI6MTYwNDY1Mjc3MywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.DHyEaa9RcbYLPoiHko8pFEzNfQTGig3ylVaZjgwTqBsiOGX8K884kAnsExIixS9-ZHeXLntoQC_xssDa5quxhw
+
+{"xmin":467816.9290650664,"ymin":3639721.141043303,"xmax":586698.4609349333,"ymax":3738619.7373566967};
+
+<> 2020-11-06T045524.400.json
+
+###
+
+POST http://localhost:8888/rest/convertCoordinate?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA1MjU3NTczLCJ1c2VySWQiOjEsImlhdCI6MTYwNDY1Mjc3MywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.DHyEaa9RcbYLPoiHko8pFEzNfQTGig3ylVaZjgwTqBsiOGX8K884kAnsExIixS9-ZHeXLntoQC_xssDa5quxhw
+
+{"xmin":467816.9290650664,"ymin":3639721.141043303,"xmax":586698.4609349333,"ymax":3738619.7373566967}
+
+<> 2020-11-06T045513.200.json
+
+###
+
+POST http://localhost:8888/rest/convertCoordinate?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA1MjU3NTczLCJ1c2VySWQiOjEsImlhdCI6MTYwNDY1Mjc3MywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.DHyEaa9RcbYLPoiHko8pFEzNfQTGig3ylVaZjgwTqBsiOGX8K884kAnsExIixS9-ZHeXLntoQC_xssDa5quxhw
+
+{"xmin":467816.9290650664,"ymin":3639721.141043303,"xmax":586698.4609349333,"ymax":3738619.7373566967}
+
+<> 2020-11-06T045451.200.json
+
+###
+
+POST http://localhost:8888/rest/convertCoordinate?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA1MjU3NTczLCJ1c2VySWQiOjEsImlhdCI6MTYwNDY1Mjc3MywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.DHyEaa9RcbYLPoiHko8pFEzNfQTGig3ylVaZjgwTqBsiOGX8K884kAnsExIixS9-ZHeXLntoQC_xssDa5quxhw
+
+{"xmin":467816.9290650664,"ymin":3639721.141043303,"xmax":586698.4609349333,"ymax":3738619.7373566967}"}
+
+<> 2020-11-06T045351.400.json
+
+###
+
+POST http://localhost:8888/rest/login?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0OTA0ODUwLCJ1c2VySWQiOjEsImlhdCI6MTYwNDMwMDA1MCwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.d1WEZY7Tb9L-j6MGB5zlKTFOgQ1Oi08a10ISPott0haAiBxGYpWWISiJJAheyKYqVKRAFs4Q7Bj64T0-NuYX1Q
+
+{"username":"admin","password":"111111"}
+
+<> 2020-11-06T045253.200.json
+
+###
+
+GET http://localhost:8888/rest/getDeptTree?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0OTA0ODUwLCJ1c2VySWQiOjEsImlhdCI6MTYwNDMwMDA1MCwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.d1WEZY7Tb9L-j6MGB5zlKTFOgQ1Oi08a10ISPott0haAiBxGYpWWISiJJAheyKYqVKRAFs4Q7Bj64T0-NuYX1Q
+
+{"username":"admin","password":"111111"}
+
+<> 2020-11-02T031013.200.json
+
+###
+
+GET http://localhost:8888/rest/getDeptTree?userid=001
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0OTA0ODUwLCJ1c2VySWQiOjEsImlhdCI6MTYwNDMwMDA1MCwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.d1WEZY7Tb9L-j6MGB5zlKTFOgQ1Oi08a10ISPott0haAiBxGYpWWISiJJAheyKYqVKRAFs4Q7Bj64T0-NuYX1Q
+
+{"username":"admin","password":"111111"}
+
+<> 2020-11-02T025632.200.json
+
+###
+
+GET http://localhost:8888/rest/getDeptTree?fileListParam=%5Bobject%20File%5D
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0OTA0ODUwLCJ1c2VySWQiOjEsImlhdCI6MTYwNDMwMDA1MCwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.d1WEZY7Tb9L-j6MGB5zlKTFOgQ1Oi08a10ISPott0haAiBxGYpWWISiJJAheyKYqVKRAFs4Q7Bj64T0-NuYX1Q
+
+{"username":"admin","password":"111111"}
+
+<> 2020-11-02T025441.400.json
+
+###
+
+POST http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc2NDQ5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg3MTY0OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.OqR9KlupjyWj1KWTD1LEv2UJqfN6BlE_e_JLvnArOVEHBKGstSBMTUZXbQaFniy8oq4QmwE9HzFQWY-cbLsDWg
+
+{"username":"admin","password":"111111"}
+
+<> 2020-11-02T025410.200.json
+
+###
+
+GET http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc2NDQ5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg3MTY0OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.OqR9KlupjyWj1KWTD1LEv2UJqfN6BlE_e_JLvnArOVEHBKGstSBMTUZXbQaFniy8oq4QmwE9HzFQWY-cbLsDWg
+
+<> 2020-11-02T025319.500.json
+
+###
+
+GET http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc2NDQ5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg3MTY0OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.OqR9KlupjyWj1KWTD1LEv2UJqfN6BlE_e_JLvnArOVEHBKGstSBMTUZXbQaFniy8oq4QmwE9HzFQWY-cbLsDWg
+
+<> 2020-11-02T025318.500.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc2NDQ5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg3MTY0OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.OqR9KlupjyWj1KWTD1LEv2UJqfN6BlE_e_JLvnArOVEHBKGstSBMTUZXbQaFniy8oq4QmwE9HzFQWY-cbLsDWg
+
+<> 2020-10-28T035507.500.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc2NDQ5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg3MTY0OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.OqR9KlupjyWj1KWTD1LEv2UJqfN6BlE_e_JLvnArOVEHBKGstSBMTUZXbQaFniy8oq4QmwE9HzFQWY-cbLsDWg
+
+<> 2020-10-28T035439.500.json
+
+###
+
+POST http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc2MjkzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg3MTQ5MywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.qN6eK9NMqLWpj-Y4EA65PHOdqBTDLSshRt32RaDUuF2jY5amNJ9P6s2gcm2FEQRDEHY3X9Gw7u4vUOGNW2qKEQ
+
+{   "password": "111111",   "username": "admin" }
+
+<> 2020-10-28T035409.200.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc2MjkzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg3MTQ5MywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.qN6eK9NMqLWpj-Y4EA65PHOdqBTDLSshRt32RaDUuF2jY5amNJ9P6s2gcm2FEQRDEHY3X9Gw7u4vUOGNW2qKEQ
+
+<> 2020-10-28T035317.500.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc2MjkzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg3MTQ5MywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.qN6eK9NMqLWpj-Y4EA65PHOdqBTDLSshRt32RaDUuF2jY5amNJ9P6s2gcm2FEQRDEHY3X9Gw7u4vUOGNW2qKEQ
+
+<> 2020-10-28T035246.500.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc2MjkzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg3MTQ5MywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.qN6eK9NMqLWpj-Y4EA65PHOdqBTDLSshRt32RaDUuF2jY5amNJ9P6s2gcm2FEQRDEHY3X9Gw7u4vUOGNW2qKEQ
+
+<> 2020-10-28T035241.500.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc2MjkzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg3MTQ5MywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.qN6eK9NMqLWpj-Y4EA65PHOdqBTDLSshRt32RaDUuF2jY5amNJ9P6s2gcm2FEQRDEHY3X9Gw7u4vUOGNW2qKEQ
+
+<> 2020-10-28T035220.500.json
+
+###
+
+POST http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Content-Type: application/json; charset=utf-8
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+{   "password": "111111",   "username": "admin" }
+
+<> 2020-10-28T035133.200.json
+
+###
+
+POST http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+{   "password": "111111",   "username": "admin" }
+
+<> 2020-10-28T035106.500.json
+
+###
+
+POST http://localhost:8888/rest/lgin?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+{   "password": "111111",   "username": "admin" }
+
+<> 2020-10-28T035055.200.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+<> 2020-10-28T035037.200.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+<> 2020-10-28T035028.200.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+<> 2020-10-28T033747.500.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+<> 2020-10-28T033633.500.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+<> 2020-10-28T033610.500.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+<> 2020-10-28T033602-1.500.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+<> 2020-10-28T033602.500.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+<> 2020-10-28T031852.500.json
+
+###
+
+POST http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+<> 2020-10-28T031821.500.json
+
+###
+
+POST http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+<> 2020-10-28T031754.500.json
+
+###
+
+POST http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Content-Type: multipart/form-data
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDc0MTg5LCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2OTM4OSwiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.vnBFjT3GwoaO6Z77kE07RVDCic8c9lm_c4mVrXoT935QIlpu0SAdovvMEvyegt_ki144nzL7IqPN4S1i-rtzzg
+
+<> 2020-10-28T031737.500.json
+
+###
+
+POST http://localhost:8888/rest/login
+Content-Type: application/json; charset=utf-8
+
+{   "password": "111111",   "username": "admin" }
+
+<> 2020-10-28T031629.200.json
+
+###
+
+POST http://localhost:8888/rest/login
+Content-Type: application/json; charset=utf-8
+
+{"passwrd":"111111","username":"admin"}
+
+<> 2020-10-28T031552.500.json
+
+###
+
+POST http://localhost:8888/rest/login
+Content-Type: multipart/form-data
+Content-Type: application/json; charset=utf-8
+
+{"passwrd":"111111","username":"admin"}
+
+<> 2020-10-28T031545.500.json
+
+###
+
+POST http://localhost:8888/rest/login
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDcxNjEzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2NjgxMywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.fzyl-zKYquahFpu_Pnlq_EyT0ZY2x2uJ5DCCDFLEOU0zGobdqSdudETwCNc3c1ieOzZseu4-xJDmtmsKq6OXGg
+Content-Type: multipart/form-data
+Content-Type: application/json; charset=utf-8
+
+{"passwrd":"111111","username":"admin"}
+
+<> 2020-10-28T031525.500.json
+
+###
+
+POST http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDcxNjEzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2NjgxMywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.fzyl-zKYquahFpu_Pnlq_EyT0ZY2x2uJ5DCCDFLEOU0zGobdqSdudETwCNc3c1ieOzZseu4-xJDmtmsKq6OXGg
+Content-Type: multipart/form-data
+Content-Type: application/json; charset=utf-8
+
+{"passwrd":"111111","username":"admin"}
+
+<> 2020-10-28T031516.500.json
+
+###
+
+POST http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDcxNjEzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2NjgxMywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.fzyl-zKYquahFpu_Pnlq_EyT0ZY2x2uJ5DCCDFLEOU0zGobdqSdudETwCNc3c1ieOzZseu4-xJDmtmsKq6OXGg
+Content-Type: multipart/form-data
+
+{"passwrd":"111111","username":"admin"}
+
+<> 2020-10-28T031453.500.json
+
+###
+
+POST http://localhost:8888/rest/login?fileListParam=%5Bobject%20File%5D
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDcxNjEzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2NjgxMywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.fzyl-zKYquahFpu_Pnlq_EyT0ZY2x2uJ5DCCDFLEOU0zGobdqSdudETwCNc3c1ieOzZseu4-xJDmtmsKq6OXGg
+Content-Type: multipart/form-data
+
+<> 2020-10-28T031413.500.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport?fileListParam=%5Bobject%20File%5D
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDcxNjEzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2NjgxMywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.fzyl-zKYquahFpu_Pnlq_EyT0ZY2x2uJ5DCCDFLEOU0zGobdqSdudETwCNc3c1ieOzZseu4-xJDmtmsKq6OXGg
+Content-Type: multipart/form-data
+
+<> 2020-10-28T031352.200.json
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDcxNjEzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2NjgxMywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.fzyl-zKYquahFpu_Pnlq_EyT0ZY2x2uJ5DCCDFLEOU0zGobdqSdudETwCNc3c1ieOzZseu4-xJDmtmsKq6OXGg
+Content-Type: multipart/form-data
+Content-Type: application/json; charset=utf-8
+
+--null
+
+
+< fileListParam=%5Bobject%20File%5D
+--null--
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDcxNjEzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2NjgxMywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.fzyl-zKYquahFpu_Pnlq_EyT0ZY2x2uJ5DCCDFLEOU0zGobdqSdudETwCNc3c1ieOzZseu4-xJDmtmsKq6OXGg
+Content-Type: multipart/form-data
+
+--null
+
+
+< fileListParam=%5Bobject%20File%5D
+--null--
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDcxNjEzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2NjgxMywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.fzyl-zKYquahFpu_Pnlq_EyT0ZY2x2uJ5DCCDFLEOU0zGobdqSdudETwCNc3c1ieOzZseu4-xJDmtmsKq6OXGg
+Content-Type: multipart/form-data
+
+--null
+
+
+< fileListParam=%5Bobject%20File%5D
+--null--
+
+###
+
+POST http://localhost:8888/file/uploadPatchReport
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjA0NDcxNjEzLCJ1c2VySWQiOjEsImlhdCI6MTYwMzg2NjgxMywiYWNjb3VudCI6ImFkbWluIiwidXNlcktleSI6Inh4eHgifQ.fzyl-zKYquahFpu_Pnlq_EyT0ZY2x2uJ5DCCDFLEOU0zGobdqSdudETwCNc3c1ieOzZseu4-xJDmtmsKq6OXGg
+Content-Type: multipart/form-data
+
+--null
+
+
+< fileListParam=%5Bobject%20File%5D
+--null--
+
+###
+
